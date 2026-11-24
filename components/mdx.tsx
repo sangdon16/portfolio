@@ -352,7 +352,6 @@ export const caseStudyComponents = {
   Fact,
   Copy,
   Subhead,
-  Note,
   Constraints,
   HeroPair,
   ShotRow,

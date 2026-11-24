@@ -69,7 +69,7 @@ export function ScreenGallery({
   }
 
   return (
-    <section className={`screen-marquee rise-in mt-16 scroll-mt-28 sm:mt-24 ${presentation === "states" ? "screen-marquee-states" : ""}`} aria-labelledby={headingId}>
+    <section className="screen-marquee rise-in mt-16 scroll-mt-28 sm:mt-24" aria-labelledby={headingId}>
       <Container>
         {kicker ? <p className="text-sm font-medium text-[#9a6b12]">{kicker}</p> : null}
         <h2 id={headingId} data-toc={toc} className={`w-full scroll-mt-28 text-[clamp(1.7rem,1rem+1.4vw,2.5rem)] font-semibold leading-[1.15] tracking-tight ${kicker ? "mt-3" : ""}`}>

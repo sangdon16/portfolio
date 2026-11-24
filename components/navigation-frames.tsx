@@ -133,7 +133,8 @@ export function NavFrames({ group }: { group: string }) {
       </FrameCarousel>
     );
   }
-  if (spec.layout === "compare" && spec.clusters) {
+  if (spec.layout === "compare") {
+    if (!spec.clusters) return null;
     return (
       <div className="mt-8">
         <div className="flex flex-col gap-8 lg:flex-row lg:items-stretch lg:gap-6">

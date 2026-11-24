@@ -35,7 +35,7 @@ export function CaseStudy({ project, children }: { project: Project; children: R
     knownList(project.collaborators) ? { label: "Collaborators", value: knownList(project.collaborators) as string[] } : null,
     knownText(project.timeframe) ? { label: "Timeframe", value: knownText(project.timeframe) as string } : null,
     knownText(project.status) ? { label: "Status", value: knownText(project.status) as string } : null,
-  ].filter((fact): fact is { label: string; value: string | string[] } => fact !== null);
+  ].filter((fact): fact is { label: string; value: string } | { label: string; value: string[] } => fact !== null);
 
   const pending = project.body.trim().length === 0;
 
