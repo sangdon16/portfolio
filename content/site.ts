@@ -9,7 +9,7 @@ export const site = {
   coffeeUrl: "",
   // scale and objectPosition set the crop.
   portrait: {
-    src: "/images/portrait.png",
+    src: "/images/portrait.webp",
     alt: "Line drawing of Don wearing glasses.",
     scale: 1,
     objectPosition: "center top",

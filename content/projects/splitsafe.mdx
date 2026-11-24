@@ -3,7 +3,7 @@ title: Designing the agreement behind the payment
 summary: How our team developed SplitSafe from a Bitcoin escrow concept into a broader payment-management experience, won first place in the regional round, and advanced to the global competition.
 label: SplitSafe · Hackathon project
 status: 1st place, regional round. Advanced to the global round.
-cover: /images/splitsafe.jpg
+cover: /images/splitsafe.webp
 coverAlt: SplitSafe interface screens.
 featured: true
 order: 2
@@ -21,7 +21,7 @@ editorNote: Narrative copy lives in this file. Layout components are in componen
   title="Designing the agreement behind the payment"
   summary="How our team developed SplitSafe from a Bitcoin escrow concept into a broader payment-management experience, won first place in the regional round, and advanced to the global competition."
   badge="1st place, regional round · Advanced to the global round"
-  image="/images/splitsafe.jpg"
+  image="/images/splitsafe.webp"
   alt="SplitSafe screens, including the dashboard and escrow details."
   caption="SplitSafe screens, including the dashboard and escrow details."
 />
@@ -70,12 +70,12 @@ editorNote: Narrative copy lives in this file. Layout components are in componen
   </StoryProse>
   <ScreenPair>
     <StoryShot
-      src="/images/splitsafe/gallery/06-recipients-split.png"
+      src="/images/splitsafe/gallery/06-recipients-split.webp"
       alt="Create escrow form naming recipients and a percentage for each."
       caption="Demonstrated creation screen. Recipients are named, and each one has a percentage. The form also shows the total allocation."
     />
     <StoryShot
-      src="/images/splitsafe/gallery/02-recipient-approval.png"
+      src="/images/splitsafe/gallery/02-recipient-approval.webp"
       alt="Escrow waiting for the recipient to approve or decline."
       caption="Demonstrated review screen. The escrow is pending, and the recipient can approve or decline. The lifecycle lists a condition being fulfilled before release."
     />
@@ -119,19 +119,19 @@ editorNote: Narrative copy lives in this file. Layout components are in componen
   </MoneyFlow>
   <ScreenPair>
     <StoryShot
-      src="/images/splitsafe/gallery/14-dashboard.png"
+      src="/images/splitsafe/gallery/14-dashboard.webp"
       alt="Dashboard with a portfolio balance and escrow counts."
       caption="Demonstrated dashboard. It shows a portfolio balance and separates escrows into total, active, completed, and pending, with a recent agreement and its shares."
     />
     <StoryShot
-      src="/images/splitsafe/gallery/04-active-release.png"
+      src="/images/splitsafe/gallery/04-active-release.webp"
       alt="Active escrow with release and refund actions."
       caption="Demonstrated escrow screen. Release payment and request refund belong to the agreement. They are not the withdrawal step."
     />
   </ScreenPair>
   <div className="mt-6">
     <StoryShot
-      src="/images/splitsafe/gallery/17-withdraw.png"
+      src="/images/splitsafe/gallery/17-withdraw.webp"
       alt="Withdraw funds dialog over the dashboard."
       caption="Demonstrated withdrawal. It asks for an amount and a Bitcoin address, and says the withdrawal is sent to the selected wallet. The screens do not define a separate committed-funds and available-funds model."
     />
@@ -161,12 +161,12 @@ editorNote: Narrative copy lives in this file. Layout components are in componen
   </StoryProse>
   <PromptBridge from="Describe the agreement" to="Review the details">
     <StoryShot
-      src="/images/splitsafe/gallery/09-ai-described-split.png"
+      src="/images/splitsafe/gallery/09-ai-described-split.webp"
       alt="AI assistant with a payment split written in natural language."
       caption="Exploration. The assistant is marked beta. A participant can describe a split in natural language before generating details."
     />
     <StoryShot
-      src="/images/splitsafe/gallery/07-ai-generated-setup.png"
+      src="/images/splitsafe/gallery/07-ai-generated-setup.webp"
       alt="AI assistant showing a generated escrow setup to confirm."
       caption="Exploration. The written split is turned into a title, amount, and recipient percentages. Addresses are still marked as needed, and the setup asks to be confirmed."
     />
@@ -204,7 +204,7 @@ editorNote: Narrative copy lives in this file. Layout components are in componen
   </Compare>
   <div className="mt-6">
     <StoryShot
-      src="/images/splitsafe/gallery/01-milestone-setup.png"
+      src="/images/splitsafe/gallery/01-milestone-setup.webp"
       alt="Create milestone escrow, with phases, recipients, and allocation."
       caption="Demonstrated milestone setup. Phases list an allocation and a duration, and recipients on a phase have a share. The screen does not show a declined or blocked milestone."
     />
@@ -235,7 +235,7 @@ editorNote: Narrative copy lives in this file. Layout components are in componen
   </StoryProse>
   <div className="mt-8">
     <StoryShot
-      src="/images/splitsafe/gallery/02-recipient-approval.png"
+      src="/images/splitsafe/gallery/02-recipient-approval.webp"
       alt="Escrow waiting for the recipient to approve or decline."
       caption="Demonstrated recipient decision. Approve and decline are available while the escrow is pending. This screen is not the proposed unanimous rule for a milestone."
     />
@@ -300,28 +300,28 @@ editorNote: Narrative copy lives in this file. Layout components are in componen
   intro="A closer look at SplitSafe’s interface, from creating an agreement to managing payments."
   speed={80}
 >
-  <Screen src="/images/splitsafe/gallery/01-milestone-setup.png" alt="Create milestone escrow, with phases, recipients, and allocation." caption="Milestone setup" />
-  <Screen src="/images/splitsafe/gallery/02-recipient-approval.png" alt="Escrow waiting for the recipient to approve or decline." caption="Recipient approval" />
-  <Screen src="/images/splitsafe/gallery/03-awaiting-deposit.png" alt="Escrow waiting for a Bitcoin deposit." caption="Awaiting deposit" />
-  <Screen src="/images/splitsafe/gallery/04-active-release.png" alt="Active escrow with release and refund actions." caption="Ready for release" />
-  <Screen src="/images/splitsafe/gallery/05-transaction-history.png" alt="Transaction history list." caption="Transaction history" />
-  <Screen src="/images/splitsafe/gallery/06-recipients-split.png" alt="Create escrow form with recipients and split allocation." caption="Recipients and split" />
-  <Screen src="/images/splitsafe/gallery/07-ai-generated-setup.png" alt="AI assistant showing a generated escrow setup to confirm." caption="Generated setup" />
-  <Screen src="/images/splitsafe/gallery/08-ai-above-form.png" alt="AI assistant above an empty escrow form." caption="Describe a split" />
-  <Screen src="/images/splitsafe/gallery/09-ai-described-split.png" alt="AI assistant with a payment split written in." caption="Split described" />
-  <Screen src="/images/splitsafe/gallery/10-wallets.png" alt="Wallet overview with balances and a Bitcoin address." caption="Wallet overview" />
-  <Screen src="/images/splitsafe/gallery/11-history-updated.png" alt="Transaction history with one escrow marked updated." caption="Updated transaction" />
-  <Screen src="/images/splitsafe/gallery/12-escrow-form.png" alt="Create escrow form with the assistant collapsed." caption="Escrow form" />
-  <Screen src="/images/splitsafe/gallery/13-assistant-history.png" alt="Transaction history with the assistant open." caption="Assistant on history" />
-  <Screen src="/images/splitsafe/gallery/14-dashboard.png" alt="Dashboard with portfolio balance and recent activity." caption="Dashboard" />
-  <Screen src="/images/splitsafe/gallery/15-assistant-create.png" alt="Create escrow form with the assistant open." caption="Assistant beside the form" />
-  <Screen src="/images/splitsafe/gallery/16-dashboard-split.png" alt="Dashboard with a payment split written to the assistant." caption="Split from the dashboard" />
-  <Screen src="/images/splitsafe/gallery/17-withdraw.png" alt="Withdraw funds dialog." caption="Withdraw funds" />
-  <Screen src="/images/splitsafe/gallery/18-dashboard-assistant.png" alt="Dashboard with the assistant open." caption="Assistant on the dashboard" />
-  <Screen src="/images/splitsafe/gallery/19-assistant-reply.png" alt="Dashboard while the assistant is responding." caption="Assistant responding" />
-  <Screen src="/images/splitsafe/gallery/20-escrow-completed.png" alt="Completed escrow with payments distributed." caption="Escrow completed" />
-  <Screen src="/images/splitsafe/gallery/21-sign-in.png" alt="SplitSafe sign-in screen." caption="Sign in" />
-  <Screen src="/images/splitsafe/gallery/22-withdraw-dialog.png" alt="Withdraw funds dialog over the dashboard." caption="Withdraw dialog" />
+  <Screen src="/images/splitsafe/gallery/01-milestone-setup.webp" alt="Create milestone escrow, with phases, recipients, and allocation." caption="Milestone setup" />
+  <Screen src="/images/splitsafe/gallery/02-recipient-approval.webp" alt="Escrow waiting for the recipient to approve or decline." caption="Recipient approval" />
+  <Screen src="/images/splitsafe/gallery/03-awaiting-deposit.webp" alt="Escrow waiting for a Bitcoin deposit." caption="Awaiting deposit" />
+  <Screen src="/images/splitsafe/gallery/04-active-release.webp" alt="Active escrow with release and refund actions." caption="Ready for release" />
+  <Screen src="/images/splitsafe/gallery/05-transaction-history.webp" alt="Transaction history list." caption="Transaction history" />
+  <Screen src="/images/splitsafe/gallery/06-recipients-split.webp" alt="Create escrow form with recipients and split allocation." caption="Recipients and split" />
+  <Screen src="/images/splitsafe/gallery/07-ai-generated-setup.webp" alt="AI assistant showing a generated escrow setup to confirm." caption="Generated setup" />
+  <Screen src="/images/splitsafe/gallery/08-ai-above-form.webp" alt="AI assistant above an empty escrow form." caption="Describe a split" />
+  <Screen src="/images/splitsafe/gallery/09-ai-described-split.webp" alt="AI assistant with a payment split written in." caption="Split described" />
+  <Screen src="/images/splitsafe/gallery/10-wallets.webp" alt="Wallet overview with balances and a Bitcoin address." caption="Wallet overview" />
+  <Screen src="/images/splitsafe/gallery/11-history-updated.webp" alt="Transaction history with one escrow marked updated." caption="Updated transaction" />
+  <Screen src="/images/splitsafe/gallery/12-escrow-form.webp" alt="Create escrow form with the assistant collapsed." caption="Escrow form" />
+  <Screen src="/images/splitsafe/gallery/13-assistant-history.webp" alt="Transaction history with the assistant open." caption="Assistant on history" />
+  <Screen src="/images/splitsafe/gallery/14-dashboard.webp" alt="Dashboard with portfolio balance and recent activity." caption="Dashboard" />
+  <Screen src="/images/splitsafe/gallery/15-assistant-create.webp" alt="Create escrow form with the assistant open." caption="Assistant beside the form" />
+  <Screen src="/images/splitsafe/gallery/16-dashboard-split.webp" alt="Dashboard with a payment split written to the assistant." caption="Split from the dashboard" />
+  <Screen src="/images/splitsafe/gallery/17-withdraw.webp" alt="Withdraw funds dialog." caption="Withdraw funds" />
+  <Screen src="/images/splitsafe/gallery/18-dashboard-assistant.webp" alt="Dashboard with the assistant open." caption="Assistant on the dashboard" />
+  <Screen src="/images/splitsafe/gallery/19-assistant-reply.webp" alt="Dashboard while the assistant is responding." caption="Assistant responding" />
+  <Screen src="/images/splitsafe/gallery/20-escrow-completed.webp" alt="Completed escrow with payments distributed." caption="Escrow completed" />
+  <Screen src="/images/splitsafe/gallery/21-sign-in.webp" alt="SplitSafe sign-in screen." caption="Sign in" />
+  <Screen src="/images/splitsafe/gallery/22-withdraw-dialog.webp" alt="Withdraw funds dialog over the dashboard." caption="Withdraw dialog" />
 </ScreenGallery>
 
 <StoryClose />

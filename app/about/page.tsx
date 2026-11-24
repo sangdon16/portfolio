@@ -34,7 +34,7 @@ export default function AboutPage() {
         <Reveal className="w-full max-w-xs xl:h-full xl:min-h-0 xl:w-auto xl:max-w-none" delay={0.12}>
           <div className="relative h-full w-full" style={{ aspectRatio: "659 / 1024" }}>
             <img
-              src="/images/about-portrait.png"
+              src="/images/about-portrait.webp"
               alt="Portrait of Don wearing a conical hat and sunglasses."
               width={659}
               height={1024}

@@ -46,7 +46,7 @@ Write recommendations separately from the team’s decision and the implementati
 
 ## Replace images
 
-- Portrait: replace `public/images/portrait.jpg`
+- Portrait: replace `public/images/portrait.webp`
 - Project covers: change `cover` in frontmatter, and put the file in `public/images/projects/`
 - Case study images: change the `src` on `<Alternative>` or `<Figure>`
 

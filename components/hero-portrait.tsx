@@ -56,7 +56,7 @@ export function HeroPortrait({ alt }: { alt: string }) {
     <div ref={frame} className="mx-auto w-full max-w-[20rem] sm:max-w-[24rem] md:max-w-[26rem] lg:max-w-[36rem]">
       <div ref={media} className="portrait-motion origin-top">
         <Image
-          src="/images/portrait.jpg"
+          src="/images/portrait-photo.webp"
           alt={alt}
           width={1280}
           height={1600}

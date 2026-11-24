@@ -15,10 +15,10 @@ function Artwork({ slug, tone }: { slug: string; tone: Tone }) {
   if (slug === "digicert") {
     return (
       <div className="relative h-44 overflow-hidden bg-white sm:h-full sm:min-h-52">
-        <img src="/images/digicert/featured-menu.jpg" alt="" className="card-still card-art h-full w-full object-cover" />
+        <img src="/images/digicert/featured-menu.webp" alt="" className="card-still card-art h-full w-full object-cover" />
         <LoopVideo
           src="/images/digicert/featured-menu.m4v"
-          poster="/images/digicert/featured-menu.jpg"
+          poster="/images/digicert/featured-menu.webp"
           className="card-loop card-art absolute inset-0 h-full w-full object-cover"
         />
       </div>
@@ -47,7 +47,7 @@ function Artwork({ slug, tone }: { slug: string; tone: Tone }) {
   return (
     <div className="relative h-44 overflow-hidden bg-[#FEB64D] sm:h-full sm:min-h-52">
       <img
-        src="/images/splitsafe.jpg"
+        src="/images/splitsafe.webp"
         alt="SplitSafe interface screens."
         width={1024}
         height={688}

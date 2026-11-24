@@ -2,13 +2,13 @@
 
 The page is `/work/digicert/platform-navigation`. The story text is `platform-navigation.mdx`. Image paths, alt text, captions, phase, and approval labels are in `navigation.ts`.
 
-Put each file in `public/images/digicert/navigation/`. Use the basename from `navigation.ts` and `.png`, `.jpg`, `.jpeg`, or `.webp`. The page uses the uploaded file instead of the placeholder. You do not need to edit the MDX.
+Put each file in `public/images/digicert/navigation/`. Use the basename from `navigation.ts` and `.webp`. The page uses the uploaded file instead of the placeholder. You do not need to edit the MDX.
 
 To add another image to a section, add a frame in `navigation.ts`, then add its id to that group’s `frames` list. Set `gallery: true` and a `galleryOrder` if it should also appear in Explore the designs.
 
 `status` is `reference`, `exploration`, `approved`, `candidate`, or `selected`. The initial redesign and the descriptive-heading arrow are approved. The four promotional banners are `selected` authorable options. That selection does not mean the authoring functionality is implemented.
 
-The case study hero and the DigiCert collection thumbnail both use `public/images/digicert/navigation/featured.png`. Replace that file to change the featured image.
+The case study hero and the DigiCert collection thumbnail both use `public/images/digicert/navigation/featured.webp`. Replace that file to change the featured image.
 
 ## What to upload first
 

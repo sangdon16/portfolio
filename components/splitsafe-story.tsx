@@ -457,7 +457,7 @@ export function Winner({ children }: { children: ReactNode }) {
   return (
     <div className="relative mt-8 overflow-hidden rounded-[2rem] border-2 border-[#FEB64D] bg-white px-6 py-10 text-ink sm:px-12 sm:py-14">
       <div className="grid items-center gap-8 md:grid-cols-[auto_minmax(0,1fr)]">
-        <img src="/images/splitsafe/trophy.png" alt="" aria-hidden="true" className="mx-auto h-40 w-auto" />
+        <img src="/images/splitsafe/trophy.webp" alt="" aria-hidden="true" className="mx-auto h-40 w-auto" />
         <div className="winner-copy">{children}</div>
       </div>
     </div>

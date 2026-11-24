@@ -35,7 +35,7 @@ function frameCaption(frame: NavFrame) {
 
 function uploadedSrc(frame: NavFrame) {
   const dir = path.join(process.cwd(), "public/images/digicert/navigation");
-  for (const ext of [".png", ".jpg", ".jpeg", ".webp"]) {
+  for (const ext of [".webp", ".png", ".jpg", ".jpeg"]) {
     const name = `${frame.file}${ext}`;
     if (fs.existsSync(path.join(dir, name))) return `/images/digicert/navigation/${name}`;
   }
@@ -67,7 +67,7 @@ function placeholderSrc(frame: NavFrame) {
     "",
     ...wrap(`Why. ${frame.why}`, lineWidth),
     "",
-    `${frame.file}.png`,
+    `${frame.file}.webp`,
   ];
   const lineHeight = 28;
   const height = Math.max(phone ? 640 : 520, 160 + blocks.length * lineHeight);
@@ -107,7 +107,7 @@ function FrameView({ frame, plain = false }: { frame: NavFrame; plain?: boolean 
             <span className="font-semibold text-ink">Why. </span>
             {frame.why}
           </p>
-          <p className="mt-4 font-mono text-xs text-muted">{frame.file}.png</p>
+          <p className="mt-4 font-mono text-xs text-muted">{frame.file}.webp</p>
         </div>
       )}
       <figcaption className="mt-3 text-sm leading-relaxed text-muted">{plain ? frame.caption : frameCaption(frame)}</figcaption>
