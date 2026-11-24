@@ -2,8 +2,6 @@
 
 import { motion } from "framer-motion";
 import { createContext, useContext, useEffect, useId, useRef, useState, type FormEvent, type ReactNode } from "react";
-import { site } from "@/content/site";
-
 const ContactContext = createContext<() => void>(() => {});
 
 export function useContact() {
@@ -35,6 +33,9 @@ function ContactDialog({ onClose }: { onClose: () => void }) {
   const titleId = useId();
   const onCloseRef = useRef(onClose);
   const allowBackdrop = useRef(false);
+  const [sending, setSending] = useState(false);
+  const [sent, setSent] = useState(false);
+  const [error, setError] = useState("");
   onCloseRef.current = onClose;
 
   useEffect(() => {
@@ -60,14 +61,33 @@ function ContactDialog({ onClose }: { onClose: () => void }) {
     };
   }, []);
 
-  function submit(event: FormEvent<HTMLFormElement>) {
+  async function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    if (sending) return;
     const data = new FormData(event.currentTarget);
     const name = String(data.get("name") || "").trim();
     const email = String(data.get("email") || "").trim();
     const message = String(data.get("message") || "").trim();
-    const body = [`Name: ${name}`, `Email: ${email}`, "", message].join("\n");
-    window.location.href = `mailto:${site.email}?subject=${encodeURIComponent(`Note from ${name || "your site"}`)}&body=${encodeURIComponent(body)}`;
+    const company = String(data.get("company") || "").trim();
+    setSending(true);
+    setError("");
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email, message, company }),
+      });
+      const result = (await response.json().catch(() => null)) as { error?: string } | null;
+      if (!response.ok) {
+        setError(result?.error || "The note could not be sent.");
+        return;
+      }
+      setSent(true);
+    } catch {
+      setError("The note could not be sent.");
+    } finally {
+      setSending(false);
+    }
   }
 
   return (
@@ -81,7 +101,7 @@ function ContactDialog({ onClose }: { onClose: () => void }) {
     >
       <motion.form
         onSubmit={submit}
-        className="p-6 sm:p-8"
+        className="relative p-6 sm:p-8"
         initial={{ opacity: 0, y: 12 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
@@ -94,7 +114,8 @@ function ContactDialog({ onClose }: { onClose: () => void }) {
             Close
           </button>
         </div>
-        <p className="mt-2 text-sm leading-relaxed text-muted">Your note opens in email, addressed to Don.</p>
+        <p className="mt-2 text-sm leading-relaxed text-muted">Your note is sent to Don.</p>
+        <input name="company" tabIndex={-1} autoComplete="off" aria-hidden="true" className="absolute h-0 w-0 overflow-hidden opacity-0" />
         <label className="mt-6 block text-sm font-medium">
           Name
           <input name="name" required autoComplete="name" className="mt-2 w-full rounded-xl border border-line bg-white px-3 py-3 text-base" />
@@ -107,8 +128,10 @@ function ContactDialog({ onClose }: { onClose: () => void }) {
           Message
           <textarea name="message" required rows={5} className="mt-2 w-full resize-y rounded-xl border border-line bg-white px-3 py-3 text-base" />
         </label>
-        <button type="submit" className="mt-6 inline-flex min-h-11 items-center rounded-full bg-ink px-5 text-sm font-medium text-white">
-          Send
+        {sent ? <p className="mt-6 text-sm leading-relaxed">Sent. Don has this note.</p> : null}
+        {error ? <p className="mt-6 text-sm leading-relaxed">{error}</p> : null}
+        <button type="submit" disabled={sending || sent} className="mt-6 inline-flex min-h-11 items-center rounded-full bg-ink px-5 text-sm font-medium text-white disabled:opacity-60">
+          {sending ? "Sending" : "Send"}
         </button>
       </motion.form>
     </dialog>
