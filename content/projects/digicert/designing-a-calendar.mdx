@@ -1,0 +1,342 @@
+---
+title: Making digital trust changes easier to act on
+summary: Exploring timelines, calendars, and agenda layouts for unevenly distributed milestones. Stakeholders agreed on a direction that prioritizes relevant changes over empty time periods.
+label: Reusable calendar pattern
+role: UX Designer
+scope: Pattern exploration, information hierarchy, interaction design, and responsive design
+cover: /images/digicert/calendar/featured.png
+coverAlt: Selected Trust Calendar agenda on desktop, with a supporting mobile view of the same upcoming changes.
+collection: digicert
+order: 2
+kind: case-study
+layout: story
+---
+
+{/*
+Reference is the corporate timeline element. The PQC and Trust Calendar frames are the design work.
+Early summary/grid is the blank-month summary. The later card grid is the Trust Calendar grid of change cards.
+Policy titles and dates in the screens are example design content.
+*/}
+
+<CampaignStory>
+  <CampaignArticle>
+    <CampaignHeader
+      label="DigiCert · Reusable calendar pattern"
+      title="Making digital trust changes easier to act on"
+      summary="Exploring timelines, calendars, and agenda layouts for unevenly distributed milestones. Stakeholders agreed on a direction that prioritizes relevant changes over empty time periods."
+    >
+      <Facts>
+        <Fact label="Role">UX Designer</Fact>
+        <Fact label="Scope">Pattern exploration, information hierarchy, interaction design, and responsive design</Fact>
+        <Fact label="Intended applications">PQC, Public Trust, and other calendar needs</Fact>
+        <Fact label="Outcome">Stakeholder agreement on the agenda direction</Fact>
+      </Facts>
+      <div className="mt-10">
+        <Shot
+          src="/images/digicert/calendar/featured.png"
+          alt="Selected Trust Calendar agenda. The desktop lists upcoming changes by month beside a mobile crop of the same entries."
+          caption="Selected agenda direction. Desktop, with a supporting mobile crop."
+        />
+      </div>
+    </CampaignHeader>
+
+    <CampaignSection id="start" toc="Starting point" title="The conversation began with a timeline">
+      <Copy>
+        <p>The project began with a reference prompt shared by someone from another marketing department with Marcelo, my Senior Manager, during the 2026 Sales Kick-off.</p>
+        <p>A longer discussion followed about what the experience should accomplish and which pattern we should pursue.</p>
+        <p>The ambition extended beyond a single page. We wanted a reusable calendar or timeline pattern that could support different needs, including PQC milestones and Public Trust changes.</p>
+        <p>“Timeline” was emphasized during those early conversations, so that became the starting point for my exploration.</p>
+        <p>The challenge was to translate that initial direction into a pattern that could accommodate different kinds of information, time ranges, and levels of activity.</p>
+      </Copy>
+      <ShotRow>
+        <Shot
+          src="/images/digicert/calendar/reference-timeline.png"
+          alt="Reference timeline. A horizontal line from 2026 to 2030 with colored markers, zoom controls, and an events table underneath."
+          caption="Reference prompt. Input to the project, separate from my design work."
+        />
+        <Shot
+          src="/images/digicert/calendar/early-swimlane.png"
+          alt="Early PQC Calendar. Organization rows for NIST, NSA/DoW, White House, European Commission, and UK NCSC run across years 2026 to 2036."
+          caption="Early timeline exploration. My design work, not the reference."
+        />
+      </ShotRow>
+    </CampaignSection>
+
+    <CampaignSection id="requirements" toc="Shared requirements" title="A shared pattern needed to handle very different calendars">
+      <Copy>
+        <p>A reusable pattern could not depend on milestones arriving at regular intervals.</p>
+        <p>Some periods could contain several changes. Others might contain none. A long-term PQC view could span years, while another use case might focus on a single month.</p>
+        <p>The information also needed to remain digestible. Showing more dates or more controls would not necessarily help someone understand what mattered.</p>
+        <p>Across the reviews, the requirement became clearer. Present the relevant information compactly without making the reader work through unnecessary structure.</p>
+      </Copy>
+      <Lens kind="question" title="How could one pattern accommodate different calendar needs while keeping the information easy to understand?" />
+    </CampaignSection>
+
+    <CampaignSection id="timeline" toc="Timeline" title="Make the passage of time visible">
+      <Copy>
+        <p>The initial timeline direction organized milestones against a shared time structure.</p>
+        <p>This offered a useful way to see when events occurred relative to one another. The swimlane exploration developed that idea through columns containing milestone cards.</p>
+        <p>I explored different amounts of visible time and how opening an event detail panel affected the available space. More visible columns supported a broader overview. Fewer columns gave individual entries more room.</p>
+        <p>The challenge was that the structure reserved space for time whether or not there was a milestone to show.</p>
+        <p>With unevenly distributed content, some columns could be crowded while others remained empty. Adjusting the number of visible columns changed the density. It did not remove that underlying tension.</p>
+      </Copy>
+      <Lens kind="time" title="A consistent time structure makes intervals visible, but can devote substantial space to periods without milestones." />
+      <FrameCarousel>
+        <Shot
+          src="/images/digicert/calendar/swimlane-wide.png"
+          alt="PQC Calendar swimlane spanning 2026 to 2035. Some year columns hold several milestone cards. Others hold one or none."
+          caption="Wider overview. More columns. Empty periods still take a column."
+        />
+        <Shot
+          src="/images/digicert/calendar/swimlane-fewer.png"
+          alt="PQC Calendar swimlane with fewer year columns, 2027 to 2033. Milestone cards have more room. Several columns stay sparse."
+          caption="Fewer visible columns. More room per entry. Empty columns remain."
+        />
+        <Shot
+          src="/images/digicert/calendar/swimlane-detail.png"
+          alt="PQC Calendar swimlane with a NIST milestone selected and its detail panel open on the right."
+          caption="Selected milestone with its detail panel open."
+        />
+      </FrameCarousel>
+    </CampaignSection>
+
+    <CampaignSection id="alternatives" toc="Alternative views" title="Test whether the timeline was the right organizing model">
+      <Copy>
+        <p>After several design reviews, I explored other approaches. An agenda, a table, a single-month calendar, a two-month calendar, and a summary view that I called a grid.</p>
+        <p>These alternatives gave us different ways to evaluate the same requirement.</p>
+        <p>The timeline emphasized position across time. A calendar emphasized dates within a familiar month. An agenda could prioritize the sequence of entries, while a table could organize information into consistent fields.</p>
+        <p>The aim was to understand which structure made the content easiest to digest across the intended use cases.</p>
+        <p>The comparison below is a comparison of design trade-offs. It is not a set of usability-test results.</p>
+      </Copy>
+      <Compare>
+        <CompareCard label="Pattern" title="Timeline / swimlane" note="Trade-off. Sparse periods still occupy columns.">
+          <p>Strength. Makes shared time intervals visible.</p>
+        </CompareCard>
+        <CompareCard label="Pattern" title="Agenda" note="Trade-off. Physical spacing no longer represents elapsed time.">
+          <p>Strength. Presents entries in chronological sequence without allocating equal space to inactive periods.</p>
+        </CompareCard>
+        <CompareCard label="Pattern" title="Table" note="Trade-off. Dense content and narrow screens put pressure on readability.">
+          <p>Strength. Supports comparison across consistent information fields.</p>
+        </CompareCard>
+        <CompareCard label="Pattern" title="Single-month calendar" note="Trade-off. Sparse months still contain many days without entries.">
+          <p>Strength. Provides familiar date-based navigation.</p>
+        </CompareCard>
+        <CompareCard label="Pattern" title="Two-month calendar" note="Trade-off. Gives more space to potentially inactive periods.">
+          <p>Strength. Shows adjacent months together.</p>
+        </CompareCard>
+        <CompareCard label="Pattern" title="Summary / grid" note="Trade-off. Suitability depends on what each unit represents and how much detail remains visible.">
+          <p>Strength. Offers a broader overview.</p>
+        </CompareCard>
+      </Compare>
+      <FrameCarousel>
+        <Shot
+          src="/images/digicert/calendar/explore-agenda.png"
+          alt="Agenda exploration. Changes listed in date order, with the action and a separate enforcement date on each row."
+          caption="Agenda exploration. Entries in sequence, without a column for every month."
+        />
+        <Shot
+          src="/images/digicert/calendar/explore-table.png"
+          alt="Table exploration. Columns for the change date, the product change, what to do, and resources."
+          caption="Table exploration. The same changes in consistent fields."
+        />
+        <Shot
+          src="/images/digicert/calendar/explore-single-month.png"
+          alt="Single-month event calendar for September 2026. Most days are empty. One event sits on the 17th, with a detail panel."
+          caption="Single-month calendar. Familiar dates, with many days that have no entry."
+        />
+        <Shot
+          src="/images/digicert/calendar/explore-summary-grid.png"
+          alt="Early summary for 2030. January through June each say there are no precisely dated milestones. Undated milestones sit in a separate row."
+          caption="Early summary/grid exploration. Blank months appear before the milestones. Distinct from the later card grid."
+        />
+      </FrameCarousel>
+    </CampaignSection>
+
+    <CampaignSection id="narrowing" toc="Narrowing the options" title="More visible time did not necessarily mean more useful information">
+      <Copy>
+        <p>The two-month and early summary/grid directions were the first options eliminated during these reviews.</p>
+        <p>The concern was that readers would encounter blank months or overview structure before reaching useful information. That worked against the goal of a compact, digestible experience.</p>
+        <p>For the calendar direction, the preference was one month at a time with navigation, rather than showing several months simultaneously.</p>
+        <p>This narrowed the exploration while preserving different ways of accessing the content. The single-month calendar still supported date-based browsing, while the agenda offered a more direct way to scan entries.</p>
+        <p>The early summary/grid exploration is not the same as every later design that uses the word grid. A later card-based Grid, or Monthly Summary, was a separate candidate and is called out on its own where it appears.</p>
+      </Copy>
+      <Lens kind="tradeoff" title="Reducing the visible time range creates a more focused view, but requires navigation to explore other periods." />
+      <ShotRow>
+        <Shot
+          src="/images/digicert/calendar/explore-two-month.png"
+          alt="Two-month calendar showing March and April 2027 together. Many days have no entry. A detail panel is open on the right."
+          caption="Two-month exploration. Adjacent months, including days without entries."
+        />
+        <Shot
+          src="/images/digicert/calendar/explore-single-month.png"
+          alt="Single-month event calendar for September 2026, with navigation to other months and one event on the 17th."
+          caption="Single-month candidate. One month at a time, with navigation."
+        />
+      </ShotRow>
+    </CampaignSection>
+
+    <CampaignSection id="candidates" toc="Final candidates" title="Bring the trade-offs into the review">
+      <Copy>
+        <p>After gathering feedback, I returned to the board to examine the areas needing attention and weigh the strengths and limitations of the alternatives.</p>
+        <p>The swimlane direction remained important because it was favored by my managers. I continued developing it while also preparing alternatives that addressed its limitations.</p>
+        <p>That gave the internal review concrete candidates to assess rather than relying on a verbal description of the differences.</p>
+        <p>The designs included a developed swimlane, a single-month calendar, and agenda-based presentations, alongside a later card-grid variation.</p>
+        <p>My contribution was to make those alternatives available before the stakeholder discussion, with the relevant compromises visible in the designs.</p>
+      </Copy>
+      <Lens kind="decision" title="Preparing alternatives made it possible to discuss what each structure prioritized and what it asked the reader to work around." />
+      <FrameCarousel framed>
+        <Shot
+          src="/images/digicert/calendar/swimlane-developed.png"
+          alt="Developed PQC swimlane for 2026 to 2035, with six year columns and a NIST detail panel open. Several columns have no milestone card."
+          caption="Developed swimlane for the internal review. Favored early by managers. Not the final decision."
+        />
+        <Shot
+          src="/images/digicert/calendar/trust-single-month.png"
+          alt="Trust Calendar with Calendar selected beside Agenda. October 2026 is shown as a month grid, with the selected change beside it."
+          caption="Single-month calendar candidate. One month, with navigation to the entry."
+        />
+        <Shot
+          src="/images/digicert/calendar/agenda-desktop.png"
+          alt="Agenda candidate on desktop. Upcoming changes, with Agenda selected beside a Grid control, and entries grouped under months that contain changes."
+          caption="Agenda candidate, desktop. Agenda is selected. The Grid control on this screen is a later view option, not the early summary/grid."
+        />
+        <Shot
+          src="/images/digicert/calendar/trust-card-grid.png"
+          alt="Trust Calendar with Grid selected beside Calendar. Changes appear as cards for the months that have them."
+          caption="Later card-based grid. Separate from the early summary/grid that was set aside."
+        />
+      </FrameCarousel>
+    </CampaignSection>
+
+    <CampaignSection id="decision" toc="Stakeholder decision" title="Choose the agenda for unevenly distributed milestones">
+      <Copy>
+        <p>At the stakeholder meeting, we agreed that the agenda was the right direction.</p>
+        <p>Atri, our Chief Marketing Officer, highlighted the problem with the swimlane approach. When there were no milestones for several months or years, those time columns would remain empty.</p>
+        <p>I shared that concern. For this content, the empty structure could occupy attention without helping someone understand the next relevant change.</p>
+        <p>The agenda alternative I had prepared grouped entries by months with changes. This preserved chronological order without reserving equal space for inactive periods.</p>
+        <p>The agreement was to prioritize the information people needed to review over a continuous visual representation of time.</p>
+        <p>This was a stakeholder-supported design decision based on the content and its presentation. A user study did not establish the agenda’s superiority.</p>
+      </Copy>
+      <Lens kind="decision" title="Show relevant changes in sequence without giving inactive periods equal space." />
+      <Lens kind="tradeoff" title="The agenda compresses gaps. A short gap between two entries can represent months of elapsed time, so explicit dates and month headings remain essential." />
+      <ShotRow>
+        <Shot
+          src="/images/digicert/calendar/swimlane-timeline.png"
+          alt="Swimlane of PQC milestones across years. Columns remain for periods that have no milestone."
+          caption="Swimlane. Inactive periods still occupy columns."
+        />
+        <Shot
+          src="/images/digicert/calendar/agenda-desktop.png"
+          alt="Selected agenda. Months with changes are grouped in order. October, December, and March appear. Empty months between them are not given equal groups."
+          caption="Selected agenda. Headings keep chronology and omit empty month groups. Dates stay explicit."
+        />
+      </ShotRow>
+      <Marks>
+        <Mark n="1">Inactive periods still occupy columns in the swimlane.</Mark>
+        <Mark n="2">Agenda headings preserve chronology while omitting empty month groups.</Mark>
+        <Mark n="3">Dates remain explicit even though spacing is not proportional to elapsed time.</Mark>
+      </Marks>
+    </CampaignSection>
+
+    <CampaignSection id="actions" toc="Action hierarchy" title="Help readers understand what a change means for them">
+      <Copy>
+        <p>The selected agenda direction does more than list dates.</p>
+        <p>Each entry brings together the change, its timing, the action a reader may need to take, and supporting information. Some entries explicitly state that no action is required. Others describe a task or a conditional response.</p>
+        <p>This distinction matters because learning that something is changing does not automatically explain how to respond.</p>
+        <p>The layout also separates the main entry date from the enforcement-date information. That gives the design room to communicate more than one relevant date without treating them as interchangeable.</p>
+        <p>Supporting resources sit behind “Learn more” controls, allowing the main entry to foreground the change and its practical consequence.</p>
+        <p>The titles and dates below are example design content from the selected screen. They are not an independent reading of the underlying requirements.</p>
+      </Copy>
+      <Lens kind="action" title="Showing actions makes each entry longer. Progressive disclosure helps keep supporting material from competing with the primary message." />
+      <div className="mt-8">
+        <Shot
+          src="/images/digicert/calendar/entry-no-action.png"
+          alt="October 15, 2026 entry. DigiCert issues public TLS certificates from G5 roots by default. The action line says no action is required. Enforcement date, September 15, 2027, Chrome, sits apart from the entry date."
+          caption="No action required. The change, the response, and the enforcement date are separate."
+        />
+      </div>
+      <div className="mt-8">
+        <Shot
+          src="/images/digicert/calendar/entry-required.png"
+          alt="December 1, 2026 entry. Next stage of MPIC enforcement. The action asks the reader to confirm that DNS supports multi-perspective validation, with a short supporting line. Enforcement date, December 15, 2026, CA/Browser Forum."
+          caption="A required action. Supporting detail stays under the action. More sits behind Learn more."
+        />
+      </div>
+      <div className="mt-8">
+        <Shot
+          src="/images/digicert/calendar/entry-conditional.png"
+          alt="March 1, 2027 entry. Root policy, client authentication EKU removal. A no path says no action is needed. A yes path says to reach out to an account manager. Enforcement date, March 15, 2027, Chrome."
+          caption="Conditional guidance. The entry states both responses instead of a single action."
+        />
+      </div>
+      <Marks>
+        <Mark n="1">Date. The entry date sits apart from the enforcement date.</Mark>
+        <Mark n="2">Change title. What is changing, before the response.</Mark>
+        <Mark n="3">Action. No action required, a task to confirm, or a conditional yes or no.</Mark>
+        <Mark n="4">Supporting information. Short guidance under the action, with more behind Learn more.</Mark>
+        <Mark n="5">Enforcement-date area. A second date, kept separate from the entry date.</Mark>
+      </Marks>
+    </CampaignSection>
+
+    <CampaignSection id="mobile" toc="Mobile" title="Preserve the hierarchy as the layout narrows">
+      <Copy>
+        <p>The agenda direction also has a mobile presentation.</p>
+        <p>The desktop entries use horizontal space to separate the date from the change and its supporting information. On mobile, that information becomes a vertical sequence within each card.</p>
+        <p>The priority remains consistent. Identify the timing, understand the change, determine whether action is needed, and access further information.</p>
+        <p>Compared with a multi-column swimlane, the agenda can follow a single reading direction on a narrow screen. The compromise is additional vertical length, particularly for entries with several actions.</p>
+        <p>The design therefore needs a consistent hierarchy so the reader can distinguish the main message from supporting detail.</p>
+      </Copy>
+      <div className="mt-8">
+        <Shot
+          src="/images/digicert/calendar/entry-no-action.png"
+          alt="Desktop October entry. The date sits beside the change title, the no-action line, supporting text, and the enforcement date."
+          caption="Desktop. Date and change share one horizontal entry."
+        />
+      </div>
+      <div className="mt-8 w-full max-w-[24rem]">
+        <Shot
+          src="/images/digicert/calendar/entry-no-action-mobile.png"
+          alt="Mobile October entry. The date, change title, no-action line, supporting text, and enforcement date stack inside one card."
+          caption="Mobile. The same entry becomes a vertical sequence."
+        />
+      </div>
+      <div className="mt-8">
+        <Shot
+          src="/images/digicert/calendar/entry-conditional.png"
+          alt="Desktop March entry, longer than the October card. Date, title, question, no and yes responses, and the enforcement date stay in one horizontal entry."
+          caption="A longer desktop entry. Extra guidance stays in the same hierarchy."
+        />
+      </div>
+      <div className="mt-8 w-full max-w-[24rem]">
+        <Shot
+          src="/images/digicert/calendar/entry-conditional-mobile.png"
+          alt="Mobile March entry. The date, title, question, no and yes responses, enforcement date, and Learn more stack in one card."
+          caption="The same longer entry on mobile. The card grows downward. The order does not change."
+        />
+      </div>
+    </CampaignSection>
+
+    <CampaignSection id="outcome" toc="Outcome" title="An agenda-led direction, selected through comparison">
+      <Copy>
+        <p>The outcome was stakeholder agreement on the agenda direction for the experience under review.</p>
+        <p>The broader brief began with a reusable calendar or timeline pattern. The exploration helped distinguish the different representations that could support that ambition, rather than assuming a timeline would suit every content distribution.</p>
+        <p>For the selected Trust Calendar direction, the agenda addressed the central concern. Relevant changes could remain visible without empty months or years dominating the composition.</p>
+        <p>This outcome reflects a design decision and stakeholder alignment. Implementation status and post-launch results are separate details to add when confirmed.</p>
+        <p>The Agenda and Grid controls on the selected screen are part of that design. Their presence does not mean every calendar or grid candidate was approved, removed, or implemented.</p>
+      </Copy>
+    </CampaignSection>
+
+    <CampaignSection id="reflection" toc="Reflection" title="Reusability includes knowing when a pattern stops helping">
+      <Copy>
+        <p>I began by exploring the timeline direction emphasized in the early discussions.</p>
+        <p>As the work developed, the question shifted from how to make that structure work to which structure best supported the information we needed to present.</p>
+        <p>The timeline remained useful for understanding shared intervals. Its limitations became clearer when milestones were sparse or unevenly distributed.</p>
+        <p>Preparing alternatives allowed the team to evaluate those limitations directly. The agenda gave up proportional spacing in exchange for a more focused presentation of relevant entries.</p>
+        <p>My main takeaway was to examine the content distribution as closely as the individual component. A structure can look appropriate with a full set of sample events and behave very differently when real gaps appear.</p>
+        <p>Future evaluation would examine whether readers can identify the next relevant change, distinguish action-required from no-action entries, and understand the relationship between the dates shown.</p>
+      </Copy>
+    </CampaignSection>
+  </CampaignArticle>
+
+  <CampaignClose slug="designing-a-calendar" />
+</CampaignStory>

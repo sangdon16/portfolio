@@ -1,0 +1,329 @@
+---
+title: Designing the agreement behind the payment
+summary: How our team developed SplitSafe from a Bitcoin escrow concept into a broader payment-management experience, won first place in the regional round, and advanced to the global competition.
+label: SplitSafe · Hackathon project
+status: 1st place, regional round. Advanced to the global round.
+cover: /images/splitsafe.jpg
+coverAlt: SplitSafe interface screens.
+featured: true
+order: 2
+kind: case-study
+layout: story
+editorNote: Narrative copy lives in this file. Layout components are in components/splitsafe-story.tsx. The closing gallery is the ScreenGallery block. Edit screen order, src, alt, caption, and speed (seconds for one loop) there. Do not invent role, team, dates, research, participant feedback, or metrics. Distinguish demonstrated screens, proposed rules, and roadmap ideas.
+---
+
+<SplitSafeStory>
+
+<StoryFrame>
+
+<StoryHero
+  label="SplitSafe · Hackathon project"
+  title="Designing the agreement behind the payment"
+  summary="How our team developed SplitSafe from a Bitcoin escrow concept into a broader payment-management experience, won first place in the regional round, and advanced to the global competition."
+  badge="1st place, regional round · Advanced to the global round"
+  image="/images/splitsafe.jpg"
+  alt="SplitSafe screens, including the dashboard and escrow details."
+  caption="SplitSafe screens, including the dashboard and escrow details."
+/>
+
+<StoryIndex />
+
+<StorySection id="problem" kicker="The agreement" toc="The agreement" title="A payment can happen in a moment. An agreement unfolds over time.">
+  <StoryProse>
+    Sending Bitcoin does not, by itself, explain what someone is paying for or what should happen before funds are released.
+
+    For a freelancer and client, the concerns run in both directions. The client wants assurance that the agreed work will be completed. The freelancer wants assurance that payment will remain available after they invest their time. Multiple contributors introduce another question: how should the payment be divided?
+
+    SplitSafe began with an exploration of programmable escrow on the Internet Computer. We wanted participants to define payment conditions, allocate funds, and coordinate approval without relying on a traditional escrow intermediary.
+
+    This gave us a product challenge as much as a technical one. The experience had to help people understand the agreement, their responsibilities, and the consequences of each action.
+  </StoryProse>
+  <PerspectiveRow note="Illustrative scenarios, not research findings.">
+    <Perspective sketch="client" role="Client">Will the agreed work be completed?</Perspective>
+    <Perspective sketch="freelancer" role="Freelancer">Will payment remain available?</Perspective>
+  </PerspectiveRow>
+</StorySection>
+
+<Journey>
+  <Stage n="01" title="Qualification" href="#qualification-title">Prove the core escrow lifecycle.</Stage>
+  <Stage n="02" title="National" href="#national-title">Connect funding, requests, balances, and withdrawal.</Stage>
+  <Stage n="03" title="Regional" href="#regional-title" active>Question single-release agreements. Win first place.</Stage>
+  <Stage n="04" title="Global" href="#result-title">Ask whether other platforms could use the escrow.</Stage>
+</Journey>
+
+<StorySection
+  id="qualification"
+  kicker="Qualification"
+  toc="Qualification"
+  title="Proving the lifecycle before expanding the product"
+>
+  <StoryProse>
+    During qualification, we concentrated on demonstrating the fundamental escrow lifecycle: creation, allocation across recipients, approval or rejection, release, cancellation, and refund handling.
+
+    A technically functioning flow was only the starting point. Participants still needed to understand whether an agreement was waiting for action, whether funds were committed, and what would happen next.
+
+    We approached the interface through familiar financial tasks: reviewing balances, entering recipients, checking allocations, and following transaction status. These gave participants a recognizable structure around unfamiliar underlying technology.
+
+    The design tension was how much complexity to expose. Showing technical mechanics throughout the journey could distract from the agreement. Hiding too much could leave people uncertain about what their action meant.
+
+    Our direction was to foreground the information needed to make the decision: who is involved, how funds are divided, what conditions apply, and which action comes next. Technical simplification still needed to preserve meaningful conditions and consequences.
+  </StoryProse>
+  <ScreenPair>
+    <StoryShot
+      src="/images/splitsafe/gallery/06-recipients-split.png"
+      alt="Create escrow form naming recipients and a percentage for each."
+      caption="Demonstrated creation screen. Recipients are named, and each one has a percentage. The form also shows the total allocation."
+    />
+    <StoryShot
+      src="/images/splitsafe/gallery/02-recipient-approval.png"
+      alt="Escrow waiting for the recipient to approve or decline."
+      caption="Demonstrated review screen. The escrow is pending, and the recipient can approve or decline. The lifecycle lists a condition being fulfilled before release."
+    />
+  </ScreenPair>
+  <AnnotationList>
+    <Annotation n="1" icon="recipients" title="Who is involved">The form names each recipient.</Annotation>
+    <Annotation n="2" icon="funds" title="How funds are divided">A percentage sits beside each recipient, with the total allocation shown.</Annotation>
+    <Annotation n="3" icon="approval" title="Which action comes next">Approve and decline are the choice on a pending escrow.</Annotation>
+  </AnnotationList>
+  <Aside title="Make the agreement easier to understand without concealing its rules." />
+</StorySection>
+
+<StorySection
+  id="national"
+  kicker="National"
+  toc="National"
+  title="Creating an escrow was not the end of the journey"
+>
+  <StoryProse>
+    As the product developed, we recognized that escrow creation represented only one part of the experience.
+
+    People also needed to fund their accounts, respond to incoming requests, monitor existing agreements, and withdraw money when it became available. These tasks needed to connect clearly, even though they represented different financial actions.
+
+    One important distinction was between releasing escrow funds and withdrawing an available balance. Treating those actions as interchangeable would make it harder to understand where money was and what could be done with it.
+
+    The broader journey became: fund an account, create an escrow, wait for recipient approval, release, reach an available balance, and withdraw.
+
+    The national-round work expanded to include cKBTC integration, receiver-side approval, withdrawal functionality, conversational interactions, prompt-based escrow assistance, SEI-related support, and dashboard enhancements.
+
+    For the case study, the significance is how these additions changed the design problem. The dashboard increasingly had to explain several agreements, balances, statuses, and available actions together.
+
+    More visibility could support understanding, but displaying everything with equal emphasis risked overwhelming the experience. This created an ongoing need to prioritize information around the participant’s current task.
+  </StoryProse>
+  <MoneyFlow>
+    <FlowStep icon="funds">Fund account</FlowStep>
+    <FlowStep icon="agreement">Create escrow</FlowStep>
+    <FlowStep icon="approval">Recipient approval</FlowStep>
+    <FlowStep icon="approval">Release</FlowStep>
+    <FlowStep icon="funds">Available balance</FlowStep>
+    <FlowStep icon="funds">Withdraw</FlowStep>
+  </MoneyFlow>
+  <ScreenPair>
+    <StoryShot
+      src="/images/splitsafe/gallery/14-dashboard.png"
+      alt="Dashboard with a portfolio balance and escrow counts."
+      caption="Demonstrated dashboard. It shows a portfolio balance and separates escrows into total, active, completed, and pending, with a recent agreement and its shares."
+    />
+    <StoryShot
+      src="/images/splitsafe/gallery/04-active-release.png"
+      alt="Active escrow with release and refund actions."
+      caption="Demonstrated escrow screen. Release payment and request refund belong to the agreement. They are not the withdrawal step."
+    />
+  </ScreenPair>
+  <div className="mt-6">
+    <StoryShot
+      src="/images/splitsafe/gallery/17-withdraw.png"
+      alt="Withdraw funds dialog over the dashboard."
+      caption="Demonstrated withdrawal. It asks for an amount and a Bitcoin address, and says the withdrawal is sent to the selected wallet. The screens do not define a separate committed-funds and available-funds model."
+    />
+  </div>
+  <Aside title="A more complete payment experience introduced more states and decisions to explain." />
+</StorySection>
+
+<StorySection
+  id="assistance"
+  kicker="Assisted entry - Explored in the national round"
+  toc="Assisted entry"
+  title="A faster way to describe an agreement still needs a deliberate review"
+  tint
+>
+  <StoryProse>
+    We explored AI-assisted interactions for a specific reason: entering recipients, amounts, and percentages can become cumbersome as an agreement grows.
+
+    Prompt-based creation offered another entry point. A participant could describe their intended payment in natural language, and the assistant could interpret that request into structured escrow details.
+
+    That convenience introduced a different responsibility. An interpreted request could contain an incorrect recipient, amount, or allocation. A fluent response should not make the resulting transaction feel automatically correct.
+
+    The boundary we wanted to preserve was between assistance and authorization. AI could help prepare an agreement or explain an incoming request. Participants still needed to inspect the details and make the consequential decision.
+
+    We also explored contextual approval assistance. Those recommendations needed to be treated as supporting information, rather than guarantees of safety or substitutes for enforced approval rules.
+
+    The compromise was accepting a deliberate review step rather than pursuing the shortest possible path from a prompt to a financial action.
+  </StoryProse>
+  <PromptBridge from="Describe the agreement" to="Review the details">
+    <StoryShot
+      src="/images/splitsafe/gallery/09-ai-described-split.png"
+      alt="AI assistant with a payment split written in natural language."
+      caption="Exploration. The assistant is marked beta. A participant can describe a split in natural language before generating details."
+    />
+    <StoryShot
+      src="/images/splitsafe/gallery/07-ai-generated-setup.png"
+      alt="AI assistant showing a generated escrow setup to confirm."
+      caption="Exploration. The written split is turned into a title, amount, and recipient percentages. Addresses are still marked as needed, and the setup asks to be confirmed."
+    />
+  </PromptBridge>
+  <StoryProse>
+    On the generated setup, the participant still has to check the title, the total amount, each recipient and percentage, and the addresses that are still missing. The assistant is not shown authorizing the payment.
+  </StoryProse>
+  <Aside title="Reduce the effort of entering details while preserving the responsibility to review them." />
+</StorySection>
+
+<StorySection
+  id="regional"
+  kicker="Milestones - Regional"
+  toc="Milestones"
+  title="The original structure did not reflect work delivered in stages"
+>
+  <StoryProse>
+    The regional stage pushed us to examine the agreement itself.
+
+    A single release could represent a straightforward exchange. It was less suitable for a project delivered over several months, where design, development, and final delivery might each warrant a separate payment.
+
+    We explored milestone-based escrow to represent that progression. Each stage could have its own allocated amount, conditions, and required approvals.
+
+    This was a change to the structure of the agreement, not simply another dashboard feature. Participants would need to understand what had already been released, what remained committed, and which stage required action.
+
+    The benefit was a closer relationship between payment and progress. The cost was a more complicated lifecycle, with additional states and opportunities for disagreement.
+  </StoryProse>
+  <Compare>
+    <CompareCard label="Earlier structure" title="One release" note="Concept illustration">
+      One condition could release the whole agreement. That could fit a straightforward exchange, and it left a staged project looking like a single payout.
+    </CompareCard>
+    <CompareCard label="Exploration" title="Milestone-based releases" note="Concept illustration">
+      Each stage could carry its own amount, conditions, and required approvals. The status then had to show what was already released, what stayed committed, and which stage needed action.
+    </CompareCard>
+  </Compare>
+  <div className="mt-6">
+    <StoryShot
+      src="/images/splitsafe/gallery/01-milestone-setup.png"
+      alt="Create milestone escrow, with phases, recipients, and allocation."
+      caption="Demonstrated milestone setup. Phases list an allocation and a duration, and recipients on a phase have a share. The screen does not show a declined or blocked milestone."
+    />
+  </div>
+  <Aside title="More flexible agreements require clearer rules and more detailed status communication." />
+</StorySection>
+
+<StorySection
+  id="approvals"
+  kicker="Saying no - Proposed rule"
+  toc="Saying no"
+  title="What should happen when one participant says no?"
+>
+  <StoryProse>
+    Milestone payments introduced a difficult approval question. If most designated participants approved a release but one declined, should the majority decide?
+
+    We considered majority voting and rejected it as the preferred direction. A legitimate objection could otherwise be overridden simply because the other participants agreed.
+
+    Our preferred rule was unanimous approval among the participants designated for that milestone. A decline would block that milestone’s payout while the disagreement remained unresolved.
+
+    That direction protected an individual objection, but it also created friction. Payment could be delayed, and a participant could become a blocker. Unanimity did not resolve disputes; it made a clear resolution path more important.
+
+    The interface therefore needed to explain who had responded, which approval was missing or declined, and why the milestone could not proceed. Recording a reason and communicating the unresolved state were part of the proposed experience.
+
+    The precise dispute-resolution process remained an area requiring further definition.
+
+    We also considered scheduled milestones. A date could determine when a milestone became eligible for processing, but it should not independently authorize a release.
+  </StoryProse>
+  <div className="mt-8">
+    <StoryShot
+      src="/images/splitsafe/gallery/02-recipient-approval.png"
+      alt="Escrow waiting for the recipient to approve or decline."
+      caption="Demonstrated recipient decision. Approve and decline are available while the escrow is pending. This screen is not the proposed unanimous rule for a milestone."
+    />
+  </div>
+  <ConceptStates
+    label="Concept illustration"
+    note="Preferred direction for a milestone, not a shipped dispute screen. It does not show how a blocked payout would eventually be resolved."
+  >
+    <ConceptState title="Waiting">A designated participant has not responded, so the milestone cannot proceed.</ConceptState>
+    <ConceptState title="Declined">That milestone’s payout stays blocked while the disagreement remains unresolved.</ConceptState>
+    <ConceptState title="Approved">Every participant designated for that milestone has approved.</ConceptState>
+  </ConceptStates>
+  <Aside title="Reaching a date is not the same as receiving approval.">
+    A scheduled date could make a milestone eligible for processing. It would not authorize the release on its own.
+  </Aside>
+</StorySection>
+
+<StorySection id="result" kicker="The result" toc="The result" title="A regional win raised a broader question">
+  <Winner>
+    SplitSafe won first place in the regional round and advanced to the global competition.
+  </Winner>
+  <StoryProse>
+    Across the rounds, the product had grown from a core escrow lifecycle toward a broader experience for managing payment agreements. The next question was whether that functionality could also serve other platforms.
+
+    Our global roadmap explored group escrow, escrow-as-a-service, APIs, embeddable widgets, and EscrowMe.
+
+    This direction could allow businesses to incorporate escrow into an existing experience. It also expanded the responsibility beyond the interface we controlled. Integrations would require clear rules, dependable transaction states, documentation, authorization, and operational support.
+
+    The opportunity was broader reach. The compromise was a substantially larger engineering and operational commitment.
+  </StoryProse>
+  <StoryMark>Proposed direction</StoryMark>
+  <Roadmap>
+    <RoadmapItem>Group escrow</RoadmapItem>
+    <RoadmapItem>Escrow-as-a-service</RoadmapItem>
+    <RoadmapItem>APIs and widgets</RoadmapItem>
+    <RoadmapItem>EscrowMe</RoadmapItem>
+  </Roadmap>
+  <Aside title="The regional award does not validate every feature or business assumption.">
+    These roadmap ideas are directions we explored. They are not shown here as shipped integrations, and the award is not evidence that each one was ready.
+  </Aside>
+</StorySection>
+
+<StorySection id="reflection" kicker="Reflection" toc="Reflection" title="A legitimate rejection should not become a penalty">
+  <StoryProse>
+    One early direction connected declined escrow requests with reputation penalties. Looking back, that assumption deserves reconsideration.
+
+    Someone might decline because the terms are incorrect, the allocation is wrong, or they never agreed to participate. A rejection alone does not demonstrate dishonest behavior.
+
+    Automatically penalizing that action could work against the participant protection we wanted the product to provide. A reputation system would need a more careful distinction between harmful behavior and legitimate disagreement.
+
+    This became one of the most useful lessons from the project: rules designed to create trust can also create unfairness if their assumptions go unchallenged.
+
+    SplitSafe taught me to examine the experience around a transaction: the expectations before it, the decisions during it, and the disagreements that may prevent it from completing. As the product grew, the design challenge became keeping those rules understandable while preserving participant control.
+  </StoryProse>
+</StorySection>
+
+</StoryFrame>
+
+<ScreenGallery
+  kicker="Screens"
+  title="Explore the screens"
+  intro="A closer look at SplitSafe’s interface, from creating an agreement to managing payments."
+  speed={80}
+>
+  <Screen src="/images/splitsafe/gallery/01-milestone-setup.png" alt="Create milestone escrow, with phases, recipients, and allocation." caption="Milestone setup" />
+  <Screen src="/images/splitsafe/gallery/02-recipient-approval.png" alt="Escrow waiting for the recipient to approve or decline." caption="Recipient approval" />
+  <Screen src="/images/splitsafe/gallery/03-awaiting-deposit.png" alt="Escrow waiting for a Bitcoin deposit." caption="Awaiting deposit" />
+  <Screen src="/images/splitsafe/gallery/04-active-release.png" alt="Active escrow with release and refund actions." caption="Ready for release" />
+  <Screen src="/images/splitsafe/gallery/05-transaction-history.png" alt="Transaction history list." caption="Transaction history" />
+  <Screen src="/images/splitsafe/gallery/06-recipients-split.png" alt="Create escrow form with recipients and split allocation." caption="Recipients and split" />
+  <Screen src="/images/splitsafe/gallery/07-ai-generated-setup.png" alt="AI assistant showing a generated escrow setup to confirm." caption="Generated setup" />
+  <Screen src="/images/splitsafe/gallery/08-ai-above-form.png" alt="AI assistant above an empty escrow form." caption="Describe a split" />
+  <Screen src="/images/splitsafe/gallery/09-ai-described-split.png" alt="AI assistant with a payment split written in." caption="Split described" />
+  <Screen src="/images/splitsafe/gallery/10-wallets.png" alt="Wallet overview with balances and a Bitcoin address." caption="Wallet overview" />
+  <Screen src="/images/splitsafe/gallery/11-history-updated.png" alt="Transaction history with one escrow marked updated." caption="Updated transaction" />
+  <Screen src="/images/splitsafe/gallery/12-escrow-form.png" alt="Create escrow form with the assistant collapsed." caption="Escrow form" />
+  <Screen src="/images/splitsafe/gallery/13-assistant-history.png" alt="Transaction history with the assistant open." caption="Assistant on history" />
+  <Screen src="/images/splitsafe/gallery/14-dashboard.png" alt="Dashboard with portfolio balance and recent activity." caption="Dashboard" />
+  <Screen src="/images/splitsafe/gallery/15-assistant-create.png" alt="Create escrow form with the assistant open." caption="Assistant beside the form" />
+  <Screen src="/images/splitsafe/gallery/16-dashboard-split.png" alt="Dashboard with a payment split written to the assistant." caption="Split from the dashboard" />
+  <Screen src="/images/splitsafe/gallery/17-withdraw.png" alt="Withdraw funds dialog." caption="Withdraw funds" />
+  <Screen src="/images/splitsafe/gallery/18-dashboard-assistant.png" alt="Dashboard with the assistant open." caption="Assistant on the dashboard" />
+  <Screen src="/images/splitsafe/gallery/19-assistant-reply.png" alt="Dashboard while the assistant is responding." caption="Assistant responding" />
+  <Screen src="/images/splitsafe/gallery/20-escrow-completed.png" alt="Completed escrow with payments distributed." caption="Escrow completed" />
+  <Screen src="/images/splitsafe/gallery/21-sign-in.png" alt="SplitSafe sign-in screen." caption="Sign in" />
+  <Screen src="/images/splitsafe/gallery/22-withdraw-dialog.png" alt="Withdraw funds dialog over the dashboard." caption="Withdraw dialog" />
+</ScreenGallery>
+
+<StoryClose />
+
+</SplitSafeStory>

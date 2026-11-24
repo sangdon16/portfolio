@@ -1,0 +1,342 @@
+---
+title: Balancing content and conversion
+summary: Exploring how campaign messaging, asset presentation, and form requirements could work together in a reusable download experience.
+label: Campaign landing page
+role: UX Designer
+scope: Page structure, visual exploration, form interactions, and responsive design
+cover: /images/digicert/campaign/hero/desktop-mobile.jpg
+coverAlt: Final desktop and mobile hero for the Forrester TEI campaign page, with the study preview and an email field.
+collection: digicert
+order: 1
+kind: case-study
+layout: story
+---
+
+{/*
+  Editable content notes
+  - Copy, captions, and image paths live in this file. Layout is in components/campaign-story.tsx.
+  - Artwork note: the study cover in the final screens says “2026 Global PKI Research Report.” The page promotes a Forrester Total Economic Impact study for DigiCert ONE. Replace the cover artwork when a matching export is available. Do not edit the screenshot pixels to hide the mismatch.
+  - hero/ images are top crops of the supplied full-page exports so the form stays readable. The uncropped files are desktop-*.png and mobile-*.png in the same folder.
+  - Initial layouts, Options A-D, and the earlier Option D sequence do not have individual exports. Those slots stay empty until the frames exist. Do not invent them.
+  - stress/ images are the form-only layout checks. They are design stress tests, not user testing.
+  - The 312% ROI, $10.1 million NPV, and payback figures belong to the Forrester study’s campaign content. They are not results of this redesign.
+  - Do not add research, stakeholder feedback, approval, or implementation status.
+*/}
+
+<CampaignStory>
+  <CampaignArticle>
+    <CampaignHeader
+      label="DigiCert · Campaign landing page · Gated asset"
+      title="Balancing content and conversion"
+      summary="Exploring how campaign messaging, asset presentation, and form requirements could work together in a reusable download experience."
+    >
+      <Facts>
+        <Fact label="Role">UX Designer</Fact>
+        <Fact label="Scope">Page structure, visual exploration, form interactions, and responsive design</Fact>
+        <Fact label="System">LASER components and embedded Eloqua forms</Fact>
+        <Fact label="Working example">Forrester TEI study for DigiCert ONE</Fact>
+        <Fact label="Deliverable">Final desktop and mobile Figma designs</Fact>
+      </Facts>
+      <div className="mt-10">
+        <Shot
+          src="/images/digicert/campaign/hero/desktop-mobile.jpg"
+          alt="Final desktop and mobile hero. The desktop page places the headline and benefits beside the study preview and email field. The mobile page stacks the same content."
+          caption="Final desktop and mobile hero."
+        />
+      </div>
+    </CampaignHeader>
+
+    <CampaignSection id="brief" toc="Brief" title="Give visitors a reason to download and a clear way to begin">
+      <Copy>
+        <p>The brief called for a visually engaging, conversion-focused campaign landing page with the form high on the page.</p>
+        <p>That requirement created a balance to work through. Visitors needed enough context to understand what they would receive and why it mattered. At the same time, the information request needed to remain prominent and easy to approach.</p>
+        <p>I used a Forrester Total Economic Impact study for DigiCert ONE as the working campaign example. Its headline findings (312% ROI, $10.1 million net present value, and payback in under six months) provided the page’s value proposition.</p>
+        <p>Those figures belong to the study’s campaign content. They are not performance results from this redesign.</p>
+        <p>My task was to connect the campaign message, asset presentation, and form within one coherent experience, while considering how the pattern would behave across different requirements and screen sizes.</p>
+      </Copy>
+      <Lens kind="question" title="How could the page explain the value of the asset while keeping the path to access clear?" />
+    </CampaignSection>
+
+    <CampaignSection id="constraints" toc="Constraints" title="The page needed to work beyond one ideal example">
+      <Copy>
+        <p>A layout that worked with a short headline and a compact form would not establish a reusable pattern.</p>
+        <p>Campaigns vary in how much explanation they need. Forms can ask for different amounts of information. Content that feels concise on desktop can become a long sequence on mobile.</p>
+        <p>The work needed to fit DigiCert’s LASER component system and accommodate embedded Eloqua forms. That meant examining flexibility within an existing web ecosystem, alongside the appearance of the individual campaign.</p>
+      </Copy>
+      <Constraints>
+        <li>Existing LASER components.</li>
+        <li>Embedded Eloqua forms.</li>
+        <li>Prominent form placement near the top.</li>
+        <li>Variable content and form lengths.</li>
+        <li>Desktop, tablet, and mobile support.</li>
+        <li>A final hero-heading direction supporting up to three lines.</li>
+      </Constraints>
+    </CampaignSection>
+
+    <CampaignSection id="initial" toc="Initial layouts" title="Start with the relationship between the message and the form">
+      <Copy>
+        <p>My first explorations examined the overall composition of the opening section.</p>
+        <p>One direction gave the headline, introduction, and illustration their own space. Beneath that introduction, the benefit list sat alongside a four-field form.</p>
+        <p>Other directions brought the form upward, placing it alongside the campaign headline, supporting copy, and benefits. I explored this arrangement with both light and dark hero treatments.</p>
+        <p>These layouts exposed different ways of interpreting the brief. A spacious introduction gave the campaign story and illustration more room. An adjacent form brought the information request closer to the opening message.</p>
+        <p>The early forms requested first name, last name, company, and work email. This established a fuller initial information request against which the later email-first directions could be compared.</p>
+      </Copy>
+      <Lens kind="tradeoff" title="Trade-off">
+        <p>More space for the introduction moves the form farther down the composition. Bringing the form alongside the message makes the opening more focused on the information request.</p>
+      </Lens>
+      <ShotRow columns={3}>
+        <Shot
+          src="/images/digicert/campaign/early-illustration.png?v=2"
+          alt="Early light layout. The headline and an illustration sit above a benefit list, with a four-field form below."
+          caption="Illustration-led introduction with the form positioned below."
+        />
+        <Shot
+          src="/images/digicert/campaign/early-light.png?v=2"
+          alt="Early light layout. The headline and benefits sit beside a four-field form."
+          caption="Light hero with an adjacent four-field form."
+        />
+        <Shot
+          src="/images/digicert/campaign/early-dark.png?v=2"
+          alt="Early dark layout. The headline and benefits sit beside a four-field form."
+          caption="Dark hero with an adjacent four-field form."
+        />
+      </ShotRow>
+    </CampaignSection>
+
+    <CampaignSection id="options" toc="Options A-D" title="Bring the asset into the conversion area">
+      <Copy>
+        <p>The next explorations brought the study preview into the same card as the form.</p>
+        <p>This gave the information request a direct visual reference: the asset the visitor was trying to access. The surrounding campaign content explained the value, while the card grouped the preview and download action.</p>
+        <p>Options A and B explored light and dark hero treatments, alongside variations in the placement of the card heading relative to the asset.</p>
+        <p>The light treatment created a quieter composition. The dark treatment established stronger separation between the white conversion card and its surroundings.</p>
+        <p>The trade-off was how to give the card prominence without reducing the campaign message to secondary decoration. The form needed to be noticeable, but the visitor still needed a reason to complete it.</p>
+      </Copy>
+      <Lens kind="decision" title="Decision">
+        <p>Keep the value proposition and conversion area distinct enough to scan, but connected enough to read as one journey.</p>
+      </Lens>
+
+      <Subhead>Move beyond the appearance of the first state</Subhead>
+      <Copy>
+        <p>The A-D explorations also introduced a focused email-first starting point.</p>
+        <p>Options C and D extended that idea into a sequence: email entry, matching, additional information, and completion. Exploring those states made the experience after the first action visible.</p>
+        <p>This changed the design question. It was no longer enough to make the opening form look simple. The interaction also needed to explain waiting, accommodate additional requirements, and communicate when the visitor had reached the intended outcome.</p>
+        <p>Email-first entry reduced the amount of information shown at the beginning compared with the initial four-field layouts. It also introduced the possibility of another step when more details were required.</p>
+      </Copy>
+      <Lens kind="tradeoff" title="Trade-off">
+        <p>A smaller initial request can simplify the starting point, but it places more responsibility on the clarity of the next step.</p>
+      </Lens>
+      <div className="mt-8">
+        <Shot
+          src="/images/digicert/campaign/options-a-d.png"
+          alt="Options A to D. Light and dark heroes, then email entry, matching, additional information, and download confirmation for Options C and D."
+          caption="Options A to D."
+        />
+      </div>
+    </CampaignSection>
+
+    <CampaignSection id="stress" toc="Stress testing" title="Revisit the asset and test the layout under pressure">
+      <Copy>
+        <p>After Options A-D, I explored form-only layouts and examined how the page behaved as content and information requirements grew.</p>
+        <p>Removing the asset let me examine the relationship between the campaign message and the form without a visual preview of the download. It was a separate exploration of the pattern’s flexibility.</p>
+        <p>The stress-test variations combined short through four-line headlines, three or five benefit bullets, and shorter or longer multi-field forms across desktop, tablet, and mobile.</p>
+        <p>These combinations made the competing demands within the hero more visible. More benefits created room for explanation. More fields accommodated a larger information request. Both increased the space needed by the opening section.</p>
+        <p>On mobile, elements that shared horizontal space became a longer vertical sequence. The order of the message, form, and benefits became as important as their desktop proportions.</p>
+        <p>The four-line headings were an explored stress condition, rather than the final heading allowance.</p>
+      </Copy>
+      <Lens kind="tradeoff" title="Trade-off">
+        <p>Supporting more content and fields increases flexibility, but also increases density, page length, and the distance to key actions.</p>
+      </Lens>
+      <p className="mt-8 text-sm font-medium text-muted">Design stress tests. Not user testing.</p>
+      <div className="mt-4">
+        <Shot
+          src="/images/digicert/campaign/stress/desktop-matrix.jpg"
+          alt="Twelve desktop stress tests. Rows vary the headline from one line to four lines. Columns vary three or five benefits and shorter or longer forms."
+          caption="Desktop stress tests across headline length, benefit count, and form length."
+        />
+      </div>
+    </CampaignSection>
+
+    <CampaignSection id="final" toc="Final direction" title="Bring the explored requirements into one experience">
+      <Copy>
+        <p>The final designs retain the dark hero, white conversion card, integrated asset preview, and email-first entry.</p>
+        <p>On desktop, the headline, introduction, and benefit summary sit alongside the asset/form card. The campaign message explains why the study matters; the card establishes what the visitor is accessing and where to begin.</p>
+        <p>The final direction also includes the intermediate and completion states, a lower conversion opportunity, and a different content order on mobile.</p>
+        <p>The asset remains prominent as the interaction changes. This preserves context, but also requires the card and surrounding layout to accommodate changes in height.</p>
+        <p>This direction brings together the concerns explored throughout the work: campaign expression, form prominence, variable information requirements, and responsive behavior.</p>
+      </Copy>
+      <div className="mt-8">
+        <Shot
+          src="/images/digicert/campaign/hero/desktop-email.png"
+          alt="Final desktop hero with the campaign message beside the study preview and email form."
+          caption="Final desktop hero."
+        />
+      </div>
+      <Marks>
+        <Mark n="1">Campaign message and benefits.</Mark>
+        <Mark n="2">Asset preview grouped with the form.</Mark>
+        <Mark n="3">Focused business-email entry.</Mark>
+        <Mark n="4">Clear download action.</Mark>
+      </Marks>
+    </CampaignSection>
+
+    <CampaignSection id="additional" toc="Additional information" title="Accommodate what is missing without treating it as an error">
+      <Copy>
+        <p>The final interaction starts with a business-email field and the action “Download the study.”</p>
+        <p>The supplied additional-information state shows email and company populated, while phone number remains to be completed. The visitor continues within the same card, with “Finish download” as the next action.</p>
+        <p>This is an enrichment state, not a validation-error screen. It represents a request for more information rather than a failed initial submission.</p>
+        <p>The initial form can remain focused, but the design still needs to make any additional request understandable. Otherwise, a visitor who expected immediate access could experience the next step as unexpected work.</p>
+        <p>I preferred “Finish download” over “Continue download” because it connects the additional information request more explicitly to the visitor’s intended goal.</p>
+      </Copy>
+      <Lens kind="tradeoff" title="Trade-off">
+        <p>Keep the first step focused while maintaining clarity when the journey requires more information.</p>
+      </Lens>
+      <ShotRow>
+        <Shot
+          src="/images/digicert/campaign/hero/desktop-email.png"
+          alt="Desktop card with an empty business email field and the action Download the study."
+          caption="Email entry."
+        />
+        <Shot
+          src="/images/digicert/campaign/hero/desktop-additional.png"
+          alt="Desktop card with email and company filled, phone number still empty, and the action Finish download."
+          caption="Additional information."
+        />
+      </ShotRow>
+    </CampaignSection>
+
+    <CampaignSection id="progress" toc="Processing and completion" title="Make progress visible and access explicit">
+      <Copy>
+        <p>The final processing state places feedback inside the action button, combining a loading indicator with “Starting your download…”</p>
+        <p>This differs from the earlier matching exploration, which used a standalone spinner. The final treatment ties the progress message directly to the action area.</p>
+        <p>Completion is also more specific. The early exploration says “You’re all set!” The final design says “Download started!” and includes “Open PDF” and “Download again.”</p>
+        <p>The confirmation also communicates that a copy has been sent by email. These are designed interface states, rather than evidence that delivery or email automation has been implemented.</p>
+        <p>The success treatment remains within the existing card. It acknowledges progress while offering direct access actions without replacing the page with a separate confirmation experience.</p>
+      </Copy>
+      <Lens kind="tradeoff" title="Trade-off">
+        <p>Keep confirmation compact while giving visitors enough feedback and options to access the asset.</p>
+      </Lens>
+      <ShotRow>
+        <Shot
+          src="/images/digicert/campaign/hero/early-matching.png?v=2"
+          alt="Earlier matching state. A standalone spinner sits under the study preview, with the note that the page is looking for the visitor's information."
+          caption="Earlier matching state, with a standalone spinner."
+        />
+        <Shot
+          src="/images/digicert/campaign/hero/desktop-processing.png"
+          alt="Final desktop card. The button reads Starting your download and includes a loading indicator."
+          caption="Final processing, with the message inside the action."
+        />
+      </ShotRow>
+      <ShotRow>
+        <Shot
+          src="/images/digicert/campaign/hero/early-completion.png"
+          alt="Earlier completion state. A check mark and You're all set confirm the download, with a note that a copy was emailed."
+          caption="Earlier completion state, “You’re all set!”"
+        />
+        <Shot
+          src="/images/digicert/campaign/hero/desktop-confirmation.png"
+          alt="Final desktop card. Download started, with Open PDF and Download again, and a note that a copy was emailed."
+          caption="Final confirmation, with Open PDF and Download again."
+        />
+      </ShotRow>
+    </CampaignSection>
+
+    <CampaignSection id="flow" toc="Complete flow" title="One goal, with different information requirements">
+      <Paths />
+      <Copy>
+        <p>The final screens describe both a direct route and a route requiring additional information. The design needs to keep the intended outcome recognizable throughout either path.</p>
+      </Copy>
+    </CampaignSection>
+
+    <CampaignSection id="second" toc="Second conversion" title="Keep the download within reach after the supporting story">
+      <Copy>
+        <p>Not every visitor will act from the first view.</p>
+        <p>The final page includes study findings, a customer-perspective section, and promotional content before presenting another email-entry form near the bottom.</p>
+        <p>That lower section restates the study’s value and gives visitors a way to act after reading further, without returning to the hero.</p>
+        <p>The compromise is repetition and page length. The second conversion area needs to occupy a useful place in the reading sequence rather than feel like an unnecessary duplicate.</p>
+        <p>The final screens show the lower form in its initial state while the hero displays other interaction states. Shared values and synchronized completion behavior are not established by the designs.</p>
+      </Copy>
+      <div className="mt-8">
+        <Shot
+          src="/images/digicert/campaign/desktop-email.png"
+          alt="Full final desktop page. An email form sits in the hero, and another email form appears after the study findings and promotional content."
+          caption="Both email-entry forms on the final desktop page."
+        />
+      </div>
+      <div className="mt-8">
+        <Shot
+          src="/images/digicert/campaign/hero/lower-email.png"
+          alt="Lower section of the final desktop page. A restated study summary sits beside a business email field and Download the study."
+          caption="The lower conversion section."
+        />
+      </div>
+    </CampaignSection>
+
+    <CampaignSection id="responsive" toc="Responsive design" title="Mobile changes the reading order, not just the width">
+      <Copy>
+        <p>On desktop, the benefit summary appears alongside the asset/form card.</p>
+        <p>On mobile, the sequence becomes: campaign headline and introduction, asset/form card, then benefit bullets.</p>
+        <p>This places the entry point earlier in the mobile reading order while keeping the fuller benefit summary nearby.</p>
+        <p>The trade-off is that the form appears before visitors read every benefit. The headline, introduction, and asset preview therefore carry more responsibility for establishing context at that point.</p>
+        <p>The additional-information, processing, and completion states also have mobile designs. They preserve the card-based interaction within the narrower layout.</p>
+      </Copy>
+      <div className="mt-8">
+        <Shot
+          src="/images/digicert/campaign/hero/desktop-email.png"
+          alt="Desktop reading order. The message and benefits are beside the asset and form."
+          caption="Desktop. Message and benefits sit with the card."
+        />
+      </div>
+      <PhoneRow>
+        <PhoneShot
+          src="/images/digicert/campaign/hero/mobile-email-full.jpg"
+          alt="Full mobile email entry. Headline and introduction, then the study card and email field, then the benefit list."
+          caption="Mobile, email entry."
+        />
+        <PhoneShot
+          src="/images/digicert/campaign/hero/mobile-additional-full.jpg"
+          alt="Full mobile additional-information state, with email and company filled, phone number open, and the benefit list below the card."
+          caption="Mobile, additional information."
+        />
+        <PhoneShot
+          src="/images/digicert/campaign/hero/mobile-processing-full.jpg"
+          alt="Full mobile processing state. The button reads Starting your download, and the benefit list follows the card."
+          caption="Mobile, processing."
+        />
+        <PhoneShot
+          src="/images/digicert/campaign/hero/mobile-confirmation-full.jpg"
+          alt="Full mobile confirmation. Download started, with Open PDF and Download again, and the benefit list below the card."
+          caption="Mobile, download confirmation."
+        />
+      </PhoneRow>
+      <Marks>
+        <Mark n="1">Campaign headline and introduction.</Mark>
+        <Mark n="2">Asset preview and email entry.</Mark>
+        <Mark n="3">Benefit summary after the card on mobile.</Mark>
+      </Marks>
+    </CampaignSection>
+
+    <CampaignSection id="reflection" toc="Reflection" title="Form placement was only the beginning">
+      <Copy>
+        <p>The brief began with a visible requirement: keep the form high on the page.</p>
+        <p>The explorations showed how closely that placement depended on the rest of the experience. Illustration and asset choices changed the composition. Headline length and benefit count changed the space needed for explanation. Form requirements affected both the layout and the number of interaction steps.</p>
+        <p>The final Figma designs define a journey from email entry through additional information when needed, processing, and download confirmation. They also include a lower conversion opportunity and mobile-specific content prioritization.</p>
+        <p>My main takeaway was to evaluate those decisions together. A prominent form still needs context, understandable progress, and a clear completion state.</p>
+        <p>The outcome documented here is the final design direction. Approval, implementation status, accessibility validation, and conversion performance should be added when confirmed.</p>
+        <p>Future evaluation would examine whether visitors understand why additional information is requested, recognize processing feedback, and can access the study after confirmation.</p>
+      </Copy>
+    </CampaignSection>
+  </CampaignArticle>
+
+  <ScreenGallery
+    title="Explore the designs"
+    toc="Designs"
+    intro="The final desktop and mobile states, from email entry to download confirmation."
+    presentation="states"
+    speed={110}
+  >
+    <Screen src="/images/digicert/campaign/gallery/field-path-hq.jpg" alt="Mobile and desktop states together. Four mobile screens sit beside the four full desktop pages, from email entry through download confirmation." />
+  </ScreenGallery>
+
+  <CampaignClose />
+</CampaignStory>

@@ -1,0 +1,30 @@
+export type ProjectKind = "collection" | "case-study";
+
+export type Project = {
+  slug: string;
+  parentSlug: string | null;
+  kind: ProjectKind;
+  title: string;
+  headline?: string;
+  label?: string;
+  context?: string;
+  summary: string;
+  client?: string;
+  year?: string;
+  role?: string;
+  scope?: string;
+  collaborators?: string[];
+  constraints?: string[];
+  timeframe?: string;
+  status?: string;
+  cover: string;
+  coverAlt: string;
+  coverCaption?: string;
+  featured: boolean;
+  order: number;
+  placeholder: boolean;
+  href: string;
+  body: string;
+  filePath: string;
+  layout?: string;
+};

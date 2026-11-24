@@ -1,0 +1,164 @@
+---
+title: Simplifying navigation while making room for change
+summary: Redesigning DigiCert’s legacy navigation, then evolving the pattern to accommodate platform hierarchy, flexible columns, clearer link cues, and promotional content.
+label: Navigation design
+role: UX Designer
+scope: Navigation structure, visual hierarchy, layout rules, responsive exploration, and interaction cues
+context: DigiCert marketing website
+cover: /images/digicert/navigation/featured.png
+coverAlt: Desktop DigiCert navigation panel open on the platform menu, with a promotional banner, beside a mobile menu of the same items.
+collection: digicert
+order: 3
+kind: case-study
+layout: story
+---
+
+{/*
+Narrative stays in this file.
+Image paths, alt text, captions, phase, and approval labels stay in content/projects/digicert/navigation.ts.
+Upload instructions are in content/projects/digicert/navigation.md.
+The initial redesign and the descriptive-heading arrow were approved. Other explorations are not approvals.
+Do not add competitor names, research findings, stakeholder quotes, metrics, or launch dates.
+*/}
+
+<CampaignStory>
+  <CampaignArticle>
+    <CampaignHeader
+      label="DigiCert · Navigation design"
+      title="Simplifying navigation while making room for change"
+      summary="Redesigning DigiCert’s legacy navigation, then evolving the pattern to accommodate platform hierarchy, flexible columns, clearer link cues, and promotional content."
+    >
+      <Facts>
+        <Fact label="Role">UX Designer</Fact>
+        <Fact label="Scope">Navigation structure, visual hierarchy, layout rules, responsive exploration, and interaction cues</Fact>
+        <Fact label="Context">DigiCert marketing website</Fact>
+        <Fact label="Approach">Mobile-first exploration alongside desktop design</Fact>
+      </Facts>
+      <div className="mt-10">
+        <Shot
+          src="/images/digicert/navigation/featured.png"
+          alt="Desktop DigiCert navigation panel open on the platform menu, with a promotional banner, beside a mobile menu of the same items."
+          caption="Featured view. Desktop panel beside the mobile menu."
+        />
+      </div>
+    </CampaignHeader>
+
+    <CampaignSection id="start" toc="Starting point" title="A large navigation with competing visual treatments">
+      <Copy>
+        <p>The project began with a brief to modernize and simplify DigiCert’s legacy navigation.</p>
+        <p>The legacy menus occupied a large area and included prominent promotional material beside the navigation links. Sections such as Solutions and Buy also used different background treatments across their columns.</p>
+        <p>The task was to examine examples from web product navigation and competitor sites, then develop a simpler direction suited to DigiCert’s content.</p>
+        <p>The challenge extended beyond reducing visual decoration. The navigation needed a structure that could accommodate different groups of links without requiring every panel to contain the same amount or type of content.</p>
+        <p>My work began with that shared structure: how the panels were organized, how headings and links related, and how the pattern could work across screen sizes.</p>
+      </Copy>
+      <NavFrames group="start" />
+    </CampaignSection>
+
+    <CampaignSection id="structure" toc="Initial structure" title="Create consistency without forcing identical content">
+      <Copy>
+        <p>The first redesign explored a more consistent framework for the navigation panels.</p>
+        <p>Different sections still needed to accommodate different content. Some columns had headings. Others did not. A layout that depended on every column having the same heading structure would be too restrictive.</p>
+        <p>I examined a single column heading, a heading only in the center, headings on the second and third columns, headings on the outer columns with an unheaded center, and no column headings.</p>
+        <p>These examples tested how the navigation items aligned when their surrounding structure changed. The goal was to keep the panel understandable without adding headings simply to fill a visual gap.</p>
+      </Copy>
+      <Lens kind="tradeoff" title="Optional headings support content flexibility, but they need clear alignment and spacing so an omitted heading does not look accidental." />
+      <NavFrames group="alignment" />
+    </CampaignSection>
+
+    <CampaignSection id="mobile" toc="Mobile-first" title="Work through the hierarchy on a smaller screen">
+      <Copy>
+        <p>I explored mobile options alongside the desktop navigation.</p>
+        <p>A desktop panel can communicate relationships through columns and spatial grouping. Mobile requires those relationships to remain understandable within a narrower, more sequential experience.</p>
+        <p>That made the distinction between headings, destination links, and grouped items particularly important. The hierarchy needed to survive even when columns could no longer carry the organization.</p>
+        <p>The mobile designs are part of the exploration throughout this case study. They sit with the decisions they relate to, rather than appearing only as a final responsive deliverable.</p>
+      </Copy>
+      <NavFrames group="mobile" />
+    </CampaignSection>
+
+    <CampaignSection id="approval" toc="First approval" title="Establish a foundation for the next set of requirements">
+      <Copy>
+        <p>The initial redesigned navigation was approved.</p>
+        <p>That established the first improvement over the legacy structure. It also provided a foundation that could be extended as the site’s requirements developed.</p>
+        <p>A couple of months later, the next set of navigation work introduced a more explicit platform hierarchy and additional layout cases.</p>
+        <p>The project therefore became an ongoing evolution of the approved pattern rather than a single replacement exercise.</p>
+      </Copy>
+      <NavFrames group="approval" />
+    </CampaignSection>
+
+    <CampaignSection id="platform" toc="Platform hierarchy" title="Make the parent-child relationship visible">
+      <Copy>
+        <p>The next phase introduced the platform umbrella.</p>
+        <p>“Explore DigiCert ONE Platform” became the clickable parent destination, with related product items presented beneath it as children. Integrations are grouped below those items.</p>
+        <p>This added a different responsibility to the navigation. It needed to offer access to the broader platform while also making individual product destinations available.</p>
+        <p>The platform link could not feel like an unrelated promotion. Its placement needed to establish context for the items below it.</p>
+        <p>On mobile, that relationship also needed to remain visible without depending on desktop column positioning.</p>
+        <p>This parent destination is separate from the descriptive-column pattern introduced later in the same phase.</p>
+      </Copy>
+      <Lens kind="tradeoff" title="A parent destination introduces another level of hierarchy. It can clarify the group, while the child destinations still need to remain easy to find." />
+      <NavFrames group="platform" />
+    </CampaignSection>
+
+    <CampaignSection id="columns" toc="Column capacity" title="Test the limits of the panel">
+      <Copy>
+        <p>Alongside the hierarchy work, I explored two-, three-, and four-column configurations.</p>
+        <p>This examined how much flexibility the navigation could accommodate as different sections required different amounts of content.</p>
+        <p>Fewer columns provide more width for each group, but can produce longer vertical lists. More columns distribute content across the panel and narrow each group.</p>
+        <p>The design question was how those configurations affected readability, grouping, and the overall proportions of the menu.</p>
+        <p>These tests belonged to the second phase. They were separate from the optional-heading and alignment cases explored in the initial redesign.</p>
+        <p>Where the screenshots use different content, they show the range of the exploration. They are not a controlled comparison, and no column count is presented here as a universal rule.</p>
+      </Copy>
+      <Lens kind="tradeoff" title="More columns can increase visible capacity, but they do not automatically make the content easier to scan." />
+      <NavFrames group="columns" />
+    </CampaignSection>
+
+    <CampaignSection id="cues" toc="Link cues" title="Clarify when a descriptive heading is a destination">
+      <Copy>
+        <p>Another ticket created alongside the phase-two work addressed a pattern the navigation had not previously accounted for: a descriptive column whose heading could also act as a link.</p>
+        <p>Marcelo’s question concerned clickability. How could the design communicate whether the whole block was interactive or whether the destination was attached to the heading?</p>
+        <p>I explored layouts and the trade-offs in how they signaled that relationship.</p>
+        <p>The approved visual treatment used a column heading with an up-right arrow in Neutral 500 from DigiCert’s color system.</p>
+        <p>That gave the heading a consistent cue that it led to another page, while allowing the descriptive content to remain part of the group.</p>
+        <p>This was a separate pattern from the platform umbrella, even though the tickets were created together during the same phase.</p>
+      </Copy>
+      <Lens kind="tradeoff" title="An explicit arrow adds a destination cue, but the cue still needs a clearly defined interactive area and consistent hover and focus behavior." />
+      <NavFrames group="links" />
+      <NavFrames group="link-detail" />
+      <NavNote id="hit-area" />
+    </CampaignSection>
+
+    <CampaignSection id="banner" toc="Promotional banner" title="Bring promotion back into the conversation">
+      <Copy>
+        <p>The latest part of the navigation work addressed a promotional banner inside the panel.</p>
+        <p>Promotional material had been prominent in the legacy navigation. Revisiting it within the redesigned system introduced a familiar tension: supporting marketing communication while preserving the menu’s role as a way to find destinations.</p>
+        <p>The banner exploration needed to be considered in relation to the existing hierarchy, link groups, and available space.</p>
+        <p>It extended the navigation story from simplifying the original system to examining how new content could be introduced within that foundation.</p>
+        <p>This is the latest phase. It was not part of the initial approved redesign. A selected banner layout, dismissal behavior, approval, and implementation status are not established here.</p>
+      </Copy>
+      <Lens kind="tradeoff" title="Promotional content creates another opportunity for discovery, while also adding visual weight and another possible action inside the menu." />
+      <NavFrames group="banner" />
+    </CampaignSection>
+
+    <CampaignSection id="outcome" toc="Outcome" title="A navigation pattern that could evolve">
+      <Copy>
+        <p>The initial redesign established an approved direction for simplifying the legacy navigation.</p>
+        <p>The second phase extended the work through a platform parent-child hierarchy, column-capacity explorations, and a separate approved cue for linked descriptive headings.</p>
+        <p>The latest banner work introduced another content requirement to examine within that evolving structure.</p>
+        <p>The contribution of the project is the combination of a redesigned navigation and the exploration of situations that a single ideal panel would not reveal: missing headings, different column counts, parent destinations, descriptive links, promotional content, and mobile hierarchy.</p>
+        <p>These phases are not one approved or shipped release. The approved pieces recorded here are the initial redesign and the descriptive-heading arrow.</p>
+      </Copy>
+    </CampaignSection>
+
+    <CampaignSection id="reflection" toc="Reflection" title="The edge cases were part of the design">
+      <Copy>
+        <p>Navigation work can appear straightforward when every column has a heading, every label is short, and each group contains a similar number of items.</p>
+        <p>The more revealing work came from the exceptions.</p>
+        <p>A missing heading raised alignment questions. A parent destination introduced another level of hierarchy. More columns changed the space available for content. A descriptive heading needed a clear link cue. A promotional banner added another demand on attention.</p>
+        <p>Working through those cases helped me evaluate how the navigation could respond to change while maintaining a coherent structure.</p>
+        <p>Future evaluation would examine whether people recognize the parent and child destinations, understand the descriptive heading’s interactive area, and locate links across desktop and mobile.</p>
+        <p>These are evaluation questions, not completed research findings.</p>
+      </Copy>
+    </CampaignSection>
+  </CampaignArticle>
+
+  <CampaignClose slug="platform-navigation" />
+</CampaignStory>

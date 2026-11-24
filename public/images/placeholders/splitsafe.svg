@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="900" viewBox="0 0 1440 900" role="img" aria-label="Placeholder. SplitSafe">
+  <rect width="1440" height="900" fill="#f4f4f4"/>
+  <rect x="24" y="24" width="1392" height="852" rx="28" fill="none" stroke="#cfcfcf" stroke-width="2" stroke-dasharray="10 12"/>
+  <text x="720.0" y="438.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="42" fill="#161616">Placeholder</text>
+  <text x="720.0" y="478.0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="24" fill="#5e5e5e">SplitSafe</text>
+</svg>
