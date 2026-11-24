@@ -6,14 +6,14 @@ Put each file in `public/images/digicert/navigation/`. Use the basename from `na
 
 To add another image to a section, add a frame in `navigation.ts`, then add its id to that group’s `frames` list. Set `gallery: true` and a `galleryOrder` if it should also appear in Explore the designs.
 
-`status` is `reference`, `exploration`, `approved`, or `candidate`. Only the initial redesign and the descriptive-heading arrow are approved. Leave other frames as `exploration` until that changes. Use `candidate` only after a banner treatment is actually selected.
+`status` is `reference`, `exploration`, `approved`, `candidate`, or `selected`. The initial redesign and the descriptive-heading arrow are approved. The four promotional banners are `selected` authorable options. That selection does not mean the authoring functionality is implemented.
 
 The case study hero and the DigiCert collection thumbnail both use `public/images/digicert/navigation/featured.png`. Replace that file to change the featured image.
 
 ## What to upload first
 
 1. `04-mobile-board` — mobile navigation board in the mobile-first section.
-2. `11-approved-heading-arrow` — approved heading and Neutral 500 arrow.
+2. `11-approved-heading-arrow` — approved desktop heading and arrow.
 
 ## Every frame
 
@@ -34,12 +34,18 @@ The case study hero and the DigiCert collection thumbnail both use `public/image
 | `08-three-column-test` | Column capacity | Three-column tests, with a header, a missing header, and no header |
 | `09-four-column-test` | Column capacity | Four-column tests, with a header, a missing header, and no header |
 | `10-descriptive-column-explorations` | Link cues | Alternative descriptive-column layouts |
-| `11-approved-heading-arrow` | Link cues | Approved heading-and-arrow treatment |
-| `11-approved-heading-arrow-closeup` | Link cues | Close-up of the Neutral 500 arrow |
-| `11-approved-heading-arrow-states` | Link cues | Mobile, hover, or focus, only if designed |
-| `12-navigation-banner-explorations` | Promotional banner | Banner explorations inside the panel |
-| `12-navigation-banner-without` | Promotional banner | Comparable panel without a banner |
-| `12-navigation-banner-candidate` | Promotional banner | Recommended treatment, only after one is selected |
-| `13-navigation-banner-mobile` | Promotional banner | Longer copy or a responsive banner, if explored |
+| `11-approved-heading-arrow` | Link cues | Approved desktop heading-and-arrow treatment |
+| `11-approved-heading-arrow-mobile` | Link cues | Approved mobile heading-and-arrow treatment |
+| `12-promo-overview` | Promotional banner | Overview of the four selected authorable banners |
+| `12-promo-image-desktop` | Promotional banner | Image-led desktop banner |
+| `12-promo-image-mobile` | Promotional banner | Image-led banner inside the mobile navigation |
+| `12-promo-image-mobile-large` | Promotional banner | Larger image-led mobile banner |
+| `12-promo-image-mobile-compact` | Promotional banner | Compact image-led mobile banner |
+| `12-promo-background-desktop` | Promotional banner | Decorative-background desktop banner |
+| `12-promo-background-mobile` | Promotional banner | Decorative-background banner on a small screen |
+| `12-promo-icon-desktop` | Promotional banner | Icon-led desktop banner |
+| `12-promo-icon-mobile` | Promotional banner | Icon-led banner on a small screen |
+| `12-promo-text-desktop` | Promotional banner | Text-led desktop banner |
+| `12-promo-text-mobile` | Promotional banner | Text-led banner on a small screen |
 
 Include Figma alignment marks on the heading frames only when those marks already exist. Do not draw a rule that is not in the file.

@@ -17,6 +17,7 @@ const statusLabel: Record<NavStatus, string> = {
   exploration: "Exploration",
   approved: "Approved design",
   candidate: "Current candidate",
+  selected: "Selected authorable option",
 };
 
 const layouts = {
@@ -156,9 +157,11 @@ export function NavFrames({ group }: { group: string }) {
       </div>
     );
   }
+  const layoutClass = spec.kicker ? layouts[spec.layout].replace(/mt-\d+/, "mt-4") : layouts[spec.layout];
   return (
     <div>
-      <div className={layouts[spec.layout]}>
+      {spec.kicker ? <p className="mt-8 text-sm font-semibold tracking-tight">{spec.kicker}</p> : null}
+      <div className={layoutClass}>
         {spec.frames.map((frame) => (
           <div key={frame.id} className={spec.layout === "phones" ? "campaign-phone" : "min-w-0"}>
             <FrameView frame={frame} plain={Boolean(frame.kicker) || spec.plain} />
@@ -185,7 +188,7 @@ export function NavigationGallery() {
     id: frame.id,
     src: uploadedSrc(frame) ?? placeholderSrc(frame),
     alt: frame.alt,
-    caption: frameCaption(frame),
+    caption: frame.galleryCaption ?? frameCaption(frame),
     phone: frame.phone,
   }));
 
