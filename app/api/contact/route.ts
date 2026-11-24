@@ -30,39 +30,25 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Enter a valid email address." }, { status: 400 });
   }
 
-  const origin = request.headers.get("origin") || new URL(request.url).origin;
   let response: Response;
   try {
-    response = await fetch(`https://formsubmit.co/ajax/${encodeURIComponent(site.email)}`, {
+    response = await fetch(`https://flowform.to/${encodeURIComponent(site.email)}`, {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-        Origin: origin,
-        Referer: `${origin}/`,
-      },
+      headers: { "Content-Type": "application/json", Accept: "application/json" },
       body: JSON.stringify({
         name,
         email,
         message,
         _subject: `Note from ${name}`,
-        _replyto: email,
-        _template: "box",
-        _captcha: "false",
+        _gotcha: "",
       }),
     });
   } catch {
     return NextResponse.json({ error: "The note could not be sent." }, { status: 502 });
   }
 
-  const result = (await response.json().catch(() => null)) as { success?: string | boolean; message?: string } | null;
-  if (result?.message && /activation/i.test(result.message)) {
-    return NextResponse.json(
-      { error: "Check your inbox for the form activation email, then send the note again." },
-      { status: 409 },
-    );
-  }
-  if (!response.ok || !result || result.success === false || result.success === "false") {
+  const result = (await response.json().catch(() => null)) as { success?: boolean } | null;
+  if (!response.ok || !result?.success) {
     return NextResponse.json({ error: "The note could not be sent." }, { status: 502 });
   }
 
